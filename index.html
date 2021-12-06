@@ -7,63 +7,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
     <div id="container">
-        <div id="calculator">
-            <div id="screen">
-
+        <div style="display: flex;">
+            <div id="other-calculators">
+                <h4>Calculator</h4>
+                <div class='active'>Standard</div>
+                <div>Date calculation</div>
+                <h4>Converter</h4>
+                <div>Length</div>
+                <div>Area</div>
+                <div>Volume</div>
+                <div>Weight & Mass</div>
+                <div>Temperature</div>
+                <div>Speed</div>
+                <div>Time</div>
+                <div>Data</div>
             </div>
-            <div id="buttons">
-                <div id='up-button'>
-                    <div id="advance-symbols">
-                        <div class="button">%</div>
-                        <div class="button">^</div>
-                        <div class="button">√</div>
-                        <div class="button">(</div>
-                        <div class="button">)</div>
-                    </div>
+            <div class="calculator">
+                <div class="screen">
+                    <div class="calculation"></div>
+                    <div class="result"></div>
                 </div>
-                <div id="down-buttons">
-                    <div id="numbers">
-                        <div class="button">9</div>
-                        <div class="button">8</div>
-                        <div class="button">7</div>
-                        <div class="button">6</div>
-                        <div class="button">5</div>
-                        <div class="button">4</div>
-                        <div class="button">3</div>
-                        <div class="button">2</div>
-                        <div class="button">1</div>
-                        <div class="button">0</div>
-                        <div class="button">.</div>
-                        <div class="button">&#960;</div>
-                    </div>
-                    <div id="basic-symbols">
-                        <div style="display: flex;">
-                            <div class="button delete" style="font-size: 15px;">DEL</div>
-                            <div class="button delete" style="font-size: 15px;">AC</div>
+                <div class="buttons">
+                    <div class='up-button'>
+                        <div class="advance-symbols">
+                            <div class="button">%</div>
+                            <div class="button">^</div>
+                            <div class="button">√</div>
+                            <div class="button">(</div>
+                            <div class="button">)</div>
                         </div>
-                        <div class="button">/</div>
-                        <div class="button">*</div>
-                        <div class="button">-</div>
-                        <div class="button">+</div>
-                        <div class="button" style="font-size: 15px;">Ans</div>
-                        <div class="button">=</div>
+                    </div>
+                    <div class="down-buttons">
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
+                            <div class="button">&#960;</div>
+                        </div>
+                        <div class="basic-symbols">
+                            <div style="display: flex;">
+                                <div class="button delete" style="font-size: 15px;">DEL</div>
+                                <div class="button delete" style="font-size: 15px;">AC</div>
+                            </div>
+                            <div class="button">/</div>
+                            <div class="button">*</div>
+                            <div class="button">-</div>
+                            <div class="button">+</div>
+                            <div class="button" style="font-size: 15px;">Ans</div>
+                            <div class="button">=</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div id='extra-buttons'>
-            <a href="https://github.com/tuanbinh8/calculator" target="_blank" style="text-decoration: none;"><button class="extra-button">Source</button></a>
-            <button class="extra-button">Dark mode</button>
+            <a href="https://github.com/tuanbinh8/calculator" target="_blank" style="text-decoration: none;"><button
+                    class="extra-button">Source</button></a>
+            <button class="extra-button" id="switching-mode-button">Dark mode</button>
         </div>
     </div>
 </body>
 <script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+
 </html>

@@ -3,7 +3,9 @@
     padding: 0;
     margin: 0;
 }
+
 #container {
+    cursor: default;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -12,13 +14,37 @@
     flex-direction: column;
 }
 
-#calculator {
+#other-calculators {
+    border-radius: 5px;
+    height: 370px;
+    width: 200px;
+    margin-right: 5px;
+    border: 2px black solid;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#other-calculators div {
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#other-calculators div:hover {
+    background-color: rgb(218, 218, 218);
+}
+
+#other-calculators div.active {
+    border-left: 5px rgb(107, 107, 255) solid;
+}
+
+.calculator {
     border-radius: 5px;
     background-color: rgb(24, 18, 37);
     width: 300px;
 }
 
-#screen {
+.screen {
     font-family: Digital-7;
     cursor: default;
     padding: 5px;
@@ -28,8 +54,6 @@
     color: rgb(2, 2, 63);
     font-size: 25px;
 }
-
-#buttons {}
 
 .button {
     margin: 0px 10px 10px 10px;
@@ -45,57 +69,57 @@
     cursor: pointer;
 }
 
-#down-buttons {
+.down-buttons {
     display: flex;
 }
 
-#numbers {
+.numbers {
     display: flex;
     flex-wrap: wrap;
     width: 60%;
 }
 
-#numbers .button {
+.numbers .button {
     background-color: orange;
     color: white;
 }
 
-#numbers .button:hover {
+.numbers .button:hover {
     background-color: rgb(218, 141, 0);
 }
 
-#basic-symbols {
+.basic-symbols {
     display: flex;
     flex-wrap: wrap;
     width: 40%;
 }
 
-#basic-symbols .button {
-    background-color: orange;
+.basic-symbols .button {
+    background-color: rgb(255, 165, 0);
     color: white;
 }
 
-#basic-symbols .button:hover {
+.basic-symbols .button:hover {
     background-color: rgb(235, 152, 0);
 }
 
 .delete {
-    background-color: brown !important;
+    background-color: rgb(165, 42, 42) !important;
 }
 
 .delete:hover {
     background-color: rgb(121, 30, 30) !important;
 }
 
-#advance-symbols {
+.advance-symbols {
     display: flex;
 }
 
-#advance-symbols .button {
-    background-color: green;
+.advance-symbols .button {
+    background-color: rgb(0, 128, 0);
 }
 
-#advance-symbols .button:hover {
+.advance-symbols .button:hover {
     background-color: rgb(0, 100, 0);
 }
 
@@ -107,7 +131,7 @@
     cursor: pointer;
     margin: 10px;
     color: white;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
