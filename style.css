@@ -42,6 +42,7 @@
     border-radius: 5px;
     background-color: rgb(24, 18, 37);
     width: 300px;
+    display: none;
 }
 
 .screen {
@@ -53,6 +54,7 @@
     height: 100px;
     color: rgb(2, 2, 63);
     font-size: 25px;
+    display: flex;
 }
 
 .button {
