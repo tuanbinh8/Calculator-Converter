@@ -35,7 +35,7 @@
 }
 
 #other-calculators div.active {
-    border-left: 5px rgb(107, 107, 255) solid;
+    background-color: rgb(140, 140, 255);
 }
 
 .calculator {
@@ -43,6 +43,9 @@
     background-color: rgb(24, 18, 37);
     width: 300px;
     display: none;
+}
+.calculator.active {
+    display: block;
 }
 
 .screen {
