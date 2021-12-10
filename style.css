@@ -15,8 +15,9 @@
 }
 
 #other-calculators {
+    background-color: rgb(241, 241, 241);
     border-radius: 5px;
-    height: 395px;
+    height: 422.917px;
     width: 200px;
     margin-right: 5px;
     border: 2px black solid;
@@ -31,7 +32,7 @@
 }
 
 #other-calculators div:hover {
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(168, 168, 168);
 }
 
 #other-calculators div.active {
@@ -39,9 +40,10 @@
 }
 
 .calculator {
+    border: 2px black solid;
     border-radius: 5px;
-    background-color: rgb(24, 18, 37);
-    width: 300px;
+    background-color: rgb(231, 231, 231);
+    width: 304px;
     display: none;
 }
 
@@ -49,13 +51,33 @@
     display: block;
 }
 
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.other-calculators-bar {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.other-calculators-bar div {
+    width: 17px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+}
+
+.fa-history {
+    cursor: pointer;
+    margin: 5px;
+}
+
 .result {
     cursor: default;
     padding: 5px;
     margin: 10px;
-    background-color: rgb(40, 68, 55);
-    height: 100px;
-    color: white;
+    height: 90px;
     font-size: 25px;
     text-align: right;
 }
@@ -85,7 +107,7 @@
 }
 
 .numbers .button {
-    background-color: orange;
+    background-color: rgb(255, 193, 77);
     color: white;
 }
 
@@ -100,7 +122,7 @@
 }
 
 .basic-symbols .button {
-    background-color: rgb(255, 165, 0);
+    background-color: rgb(255, 193, 77);
     color: white;
 }
 
@@ -121,7 +143,7 @@
 }
 
 .advance-symbols .button {
-    background-color: rgb(0, 128, 0);
+    background-color: rgb(1, 207, 1);
 }
 
 .advance-symbols .button:hover {

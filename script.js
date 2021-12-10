@@ -21,3 +21,14 @@ selectOtherCalculatorsButtons.map((button) => {
         })
     }
 })
+
+let otherCalculatorsBar = Array.from(document.getElementsByClassName('other-calculators-bar'))
+otherCalculatorsBar.map((element) => {
+    element.onclick = () => {
+        let otherCalculatorsList = document.getElementById('other-calculators')
+        if (otherCalculatorsList.style.display === 'none')
+            otherCalculatorsList.style.display = 'block'
+        else
+            otherCalculatorsList.style.display = 'none'
+    }
+})
