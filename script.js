@@ -1,10 +1,11 @@
-document.getElementById('switching-mode-button').onclick = () => {
-
-}
-
 let selectOtherCalculatorsButtons = Array.from(document.querySelectorAll('#other-calculators div'))
 let calculators = Array.from(document.getElementsByClassName('calculator'))
 let Ans
+
+//dark mode
+document.getElementById('switching-mode-button').onclick = () => {
+
+}
 
 selectOtherCalculatorsButtons.map((button) => {
     let clickedButton = button
@@ -52,13 +53,14 @@ buttons.map((listOfButtons) => {
         }
     })
 })
+
 let equal = Array.from(document.getElementsByClassName('equal'))
 equal.map((element) => {
     element.onclick = () => {
         let output = document.querySelector('.active .output')
         let input = document.querySelector('.active .input')
         output.innerHTML = eval(input.innerHTML)
-        Ans=output.innerHTML
+        Ans = output.innerHTML
     }
 })
 
@@ -71,6 +73,7 @@ DELButtons.map((button) => {
             input.innerHTML = input.innerHTML.slice(0, -1)
     }
 })
+
 let ACButtons = Array.from(document.getElementsByClassName('AC'))
 ACButtons.map((button) => {
     button.onclick = () => {
