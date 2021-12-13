@@ -111,7 +111,7 @@
     color: white;
 }
 
-.numbers .button:hover {
+.numbers .button:active {
     background-color: rgb(218, 141, 0);
 }
 
@@ -126,7 +126,7 @@
     color: white;
 }
 
-.basic-symbols .button:hover {
+.basic-symbols .button:active {
     background-color: rgb(235, 152, 0);
 }
 
@@ -134,7 +134,7 @@
     background-color: rgb(165, 42, 42) !important;
 }
 
-.delete:hover {
+.delete:active {
     background-color: rgb(121, 30, 30) !important;
 }
 
@@ -146,7 +146,7 @@
     background-color: rgb(1, 207, 1);
 }
 
-.advance-symbols .button:hover {
+.advance-symbols .button:active {
     background-color: rgb(0, 100, 0);
 }
 
