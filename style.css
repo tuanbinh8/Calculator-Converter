@@ -163,7 +163,21 @@
 
 .calculator:nth-of-type(3) input {
     width: 90px;
+    margin-left: 5px;
 }
+
+.calculator:nth-of-type(3) pre {
+    margin: 0;
+}
+
+.calculator:nth-of-type(3) .result p:nth-child(2) {
+    font-size: 25px;
+    font-weight: bold;
+}
+.calculator:nth-of-type(3) .result p:nth-child(3) {
+    font-size: 15px;
+}
+
 
 .extra-button {
     display: block;

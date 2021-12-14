@@ -14,7 +14,7 @@
 <body>
     <div id="container">
         <div style="display: flex;">
-            <div id="other-calculators" style="display: none;">
+            <div id="other-calculators" style="display: block;">
                 <h4>Calculator</h4>
                 <div class='active'>Standard</div>
                 <div>Date calculator</div>
@@ -98,48 +98,50 @@
                     <option value="">Difference between dates</option>
                     <option value="">Add or subtract days</option>
                 </select>
-                <p>From</p>
-                <div style="display: flex;">
-                    <select id="">
-                        <option value="">January</option>
-                        <option value="">February</option>
-                        <option value="">March</option>
-                        <option value="">April</option>
-                        <option value="">May</option>
-                        <option value="">June</option>
-                        <option value="">July</option>
-                        <option value="">August</option>
-                        <option value="">September</option>
-                        <option value="">October</option>
-                        <option value="">November</option>
-                        <option value="">December</option>
-                    </select>
-                    <input type="number" min="1" max='31' placeholder="day">
-                    <pre>, </pre>
-                    <input type="number" placeholder="year">
-                </div>
-                <p>To</p>
-                <div style="display: flex;">
-                    <select id="">
-                        <option value="">January</option>
-                        <option value="">February</option>
-                        <option value="">March</option>
-                        <option value="">April</option>
-                        <option value="">May</option>
-                        <option value="">June</option>
-                        <option value="">July</option>
-                        <option value="">August</option>
-                        <option value="">September</option>
-                        <option value="">October</option>
-                        <option value="">November</option>
-                        <option value="">December</option>
-                    </select>
-                    <input type="number" min="1" max='31' placeholder="day">
-                    <pre>, </pre>
-                    <input type="number" placeholder="year">
-                </div>
-                <div class="result">
-
+                <div>
+                    <p>From</p>
+                    <div style="display: flex;">
+                        <select id="">
+                            <option value="">January</option>
+                            <option value="">February</option>
+                            <option value="">March</option>
+                            <option value="">April</option>
+                            <option value="">May</option>
+                            <option value="">June</option>
+                            <option value="">July</option>
+                            <option value="">August</option>
+                            <option value="">September</option>
+                            <option value="">October</option>
+                            <option value="">November</option>
+                            <option value="">December</option>
+                        </select>
+                        <input type="number" min="1" max='31' placeholder="day">,
+                        <input type="number" placeholder="year">
+                    </div>
+                    <p>To</p>
+                    <div style="display: flex;">
+                        <select id="">
+                            <option value="">January</option>
+                            <option value="">February</option>
+                            <option value="">March</option>
+                            <option value="">April</option>
+                            <option value="">May</option>
+                            <option value="">June</option>
+                            <option value="">July</option>
+                            <option value="">August</option>
+                            <option value="">September</option>
+                            <option value="">October</option>
+                            <option value="">November</option>
+                            <option value="">December</option>
+                        </select>
+                        <input type="number" min="1" max='31' placeholder="day">,
+                        <input type="number" placeholder="year">
+                    </div>
+                    <div class="result">
+                        <p>Difference</p>
+                        <p>Same date</p>
+                        <p>0 day(s)</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,6 +154,7 @@
 </body>
 <script src="script.js"></script>
 <script src="js/all.min.js"></script>
+<script src="js/date-calculator.js"></script>
 <script src="js/standard-calculator.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
