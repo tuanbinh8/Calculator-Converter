@@ -22,8 +22,9 @@ equal.map((element) => {
     element.onclick = () => {
         let output = document.querySelector('.active .output')
         let input = document.querySelector('.active .input')
+        console.log(input.innerHTML);
         output.innerHTML = eval(input.innerHTML)
-        Ans = output.innerHTML
+        Ans = Number(output.innerHTML)
     }
 })
 
