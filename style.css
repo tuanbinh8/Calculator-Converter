@@ -52,38 +52,30 @@
     display: block;
 }
 
-.top-bar {
+.calculator .top-bar {
     display: flex;
     justify-content: space-between;
 }
 
-.other-calculators-bar {
+.calculator .other-calculators-bar {
     margin: 5px;
     cursor: pointer;
 }
 
-.other-calculators-bar div {
+.calculator .other-calculators-bar div {
     width: 17px;
     height: 3px;
     background-color: black;
     margin: 3px 0;
 }
 
-.fa-history {
+.calculator .top-bar .fa-history {
     cursor: pointer;
     margin: 5px;
+    font-size: 20px;
 }
 
-.calculator:nth-of-type(2) .result {
-    cursor: default;
-    padding: 5px;
-    margin: 10px;
-    height: 90px;
-    font-size: 25px;
-    text-align: right;
-}
-
-.button {
+.calculator .button {
     margin: 0px 5px 5px 5px;
     padding: 5px;
     width: 50px;
@@ -97,63 +89,73 @@
     cursor: pointer;
 }
 
-.down-buttons {
-    display: flex;
-}
-
-.numbers {
-    display: flex;
-    flex-wrap: wrap;
-    width: 60%;
-}
-
-.numbers .button {
+.calculator .buttons .numbers .button {
     background-color: rgb(255, 193, 77);
     color: white;
 }
 
-.numbers .button:active {
+.calculator .buttons .numbers .button:active {
     background-color: rgb(218, 141, 0);
 }
 
-.basic-symbols {
-    display: flex;
-    flex-wrap: wrap;
-    width: 40%;
-}
-
-.basic-symbols .button {
-    background-color: rgb(255, 193, 77);
+.calculator .buttons .delete {
+    background-color: rgb(165, 42, 42) !important;
     color: white;
 }
 
-.basic-symbols .button:active {
-    background-color: rgb(235, 152, 0);
-}
-
-.delete {
-    background-color: rgb(165, 42, 42) !important;
-}
-
-.delete:active {
+.calculator .buttons .delete:active {
     background-color: rgb(121, 30, 30) !important;
-}
-
-.advance-symbols {
-    display: flex;
-}
-
-.advance-symbols .button {
-    background-color: rgb(1, 207, 1);
-}
-
-.advance-symbols .button:active {
-    background-color: rgb(0, 100, 0);
 }
 
 .calculator select {
     background-color: rgb(231, 231, 231);
     border: none;
+}
+
+.calculator:nth-of-type(2) .buttons .down-buttons {
+    display: flex;
+}
+
+.calculator:nth-of-type(2) .buttons .numbers {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.calculator:nth-of-type(2) .buttons .basic-symbols {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+}
+
+.calculator:nth-of-type(2) .buttons .basic-symbols .button {
+    background-color: rgb(255, 193, 77);
+    color: white;
+}
+
+.calculator:nth-of-type(2) .buttons .basic-symbols .button:active {
+    background-color: rgb(235, 152, 0);
+}
+
+.calculator:nth-of-type(2) .buttons .advance-symbols {
+    display: flex;
+}
+
+.calculator:nth-of-type(2) .buttons .advance-symbols .button {
+    background-color: rgb(1, 207, 1);
+}
+
+.calculator:nth-of-type(2) .buttons .advance-symbols .button:active {
+    background-color: rgb(0, 100, 0);
+}
+
+.calculator:nth-of-type(2) .result {
+    cursor: default;
+    padding: 5px;
+    margin: 10px;
+    height: 90px;
+    font-size: 25px;
+    text-align: right;
 }
 
 .calculator:nth-of-type(3) p {
@@ -174,10 +176,26 @@
     font-size: 25px;
     font-weight: bold;
 }
+
 .calculator:nth-of-type(3) .result p:nth-child(3) {
     font-size: 15px;
 }
 
+.converter p {
+    font-size: 30px;
+    margin: 4px;
+}
+
+.converter .buttons {
+    width: 80%;
+}
+
+.converter .buttons .numbers {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
 
 .extra-button {
     display: block;
