@@ -1,0 +1,75 @@
+#container.darkmode {
+    background-color: black;
+}
+
+#other-calculators.darkmode {
+    background-color: rgb(14, 14, 14);
+    color: white;
+    border: 2px white solid;
+}
+
+#other-calculators div:hover.darkmode {
+    background-color: rgb(87, 87, 87);
+}
+
+#other-calculators div.active.darkmode {
+    background-color: rgb(147, 147, 255);
+}
+
+.calculator.darkmode {
+    border: 2px white solid;
+    background-color: rgb(24, 24, 24);
+    color: white;
+}
+
+.calculator .other-calculators-bar div.darkmode {
+    background-color: white;
+}
+
+.calculator .buttons .numbers .button.darkmode {
+    background-color: rgb(0, 62, 178);
+    color: black;
+}
+
+.calculator .buttons .numbers .button:active.darkmode {
+    background-color: rgb(37, 114, 255);
+}
+
+.calculator .buttons .delete.darkmode {
+    background-color: rgb(90, 213, 213) !important;
+    color: black;
+}
+
+.calculator .buttons .delete:active.darkmode {
+    background-color: rgb(131, 225, 225) !important;
+}
+
+.calculator select.darkmode {
+    color: white;
+}
+
+.calculator select option.darkmode {
+    color: black;
+}
+
+.calculator:nth-of-type(2) .buttons .basic-symbols .button.darkmode {
+    background-color: rgb(0, 62, 178);
+    color: black;
+}
+
+.calculator:nth-of-type(2) .buttons .basic-symbols .button:active.darkmode {
+    background-color: rgb(37, 114, 255);
+}
+
+.calculator:nth-of-type(2) .buttons .advance-symbols .button.darkmode {
+    background-color: rgb(254, 48, 254);
+}
+
+.calculator:nth-of-type(2) .buttons .advance-symbols .button:active.darkmode {
+    background-color: rgb(255, 155, 255);
+}
+
+.extra-button.darkmode {
+    color: black;
+    background-color: white;
+}

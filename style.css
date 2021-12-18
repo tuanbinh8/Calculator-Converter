@@ -108,7 +108,7 @@
 }
 
 .calculator select {
-    background-color: rgb(231, 231, 231);
+    background-color: transparent;
     border: none;
 }
 
@@ -205,7 +205,7 @@
     cursor: pointer;
     margin: 10px;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     text-decoration: none;
 }
 

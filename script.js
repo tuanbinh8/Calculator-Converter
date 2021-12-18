@@ -3,7 +3,12 @@ let calculators = Array.from(document.getElementsByClassName('calculator'))
 
 //dark mode
 document.getElementById('switching-mode-button').onclick = () => {
-
+    Array.from(document.querySelectorAll('*')).map((elmt) => {
+        if (!elmt.classList.contains('darkmode'))
+            elmt.classList.add('darkmode')
+        else
+            elmt.classList.remove('darkmode')
+    })
 }
 
 let otherCalculatorsBar = Array.from(document.getElementsByClassName('other-calculators-bar'))
