@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="calculator">
+            <div class="calculator active">
                 <div class="top-bar">
                     <div class="other-calculators-bar">
                         <div></div>
@@ -93,14 +93,14 @@
                     <h4>Date calculator</h4>
                     <i class="fas fa-history"></i>
                 </div>
-                <select>
+                <select id="select-date-calculator">
                     <option value="">Difference between dates</option>
                     <option value="">Add or subtract days</option>
                 </select>
-                <div class="date-calculator" style="display: block;">
+                <div class="date-calculator active">
                     <p>From</p>
                     <div style="display: flex;">
-                        <select id="">
+                        <select class='month'>
                             <option value="">January</option>
                             <option value="">February</option>
                             <option value="">March</option>
@@ -114,12 +114,12 @@
                             <option value="">November</option>
                             <option value="">December</option>
                         </select>
-                        <input type="number" min="1" max='31' placeholder="day">,
-                        <input type="number" placeholder="year">
+                        <input type="number" min="1" max='31' placeholder="day" class="day">,
+                        <input type="number" placeholder="year" class="year">
                     </div>
                     <p>To</p>
                     <div style="display: flex;">
-                        <select id="">
+                        <select class="month">
                             <option value="">January</option>
                             <option value="">February</option>
                             <option value="">March</option>
@@ -133,8 +133,8 @@
                             <option value="">November</option>
                             <option value="">December</option>
                         </select>
-                        <input type="number" min="1" max='31' placeholder="day">,
-                        <input type="number" placeholder="year">
+                        <input type="number" min="1" max='31' placeholder="day" class="day">,
+                        <input type="number" placeholder="year" class="year">
                     </div>
                     <div class="result">
                         <p>Difference</p>
@@ -142,8 +142,32 @@
                         <p>0 day(s)</p>
                     </div>
                 </div>
-                <div class="date-calculator" style="display: none;">
-
+                <div class="date-calculator">
+                    <p>From</p>
+                    <div style="display: flex;">
+                        <select class='month'>
+                            <option value="">January</option>
+                            <option value="">February</option>
+                            <option value="">March</option>
+                            <option value="">April</option>
+                            <option value="">May</option>
+                            <option value="">June</option>
+                            <option value="">July</option>
+                            <option value="">August</option>
+                            <option value="">September</option>
+                            <option value="">October</option>
+                            <option value="">November</option>
+                            <option value="">December</option>
+                        </select>
+                        <input type="number" min="1" max='31' placeholder="day" class="day">,
+                        <input type="number" placeholder="year" class="year">
+                    </div>
+                    <div>
+                        <input type="radio" name="" id="plus-date">
+                        <label for="plus-date">Plus</label>
+                        <input type="radio" name="" id="subtract-date">
+                        <label for="subtract-date">subtract</label>
+                    </div>
                 </div>
             </div>
             <div class="calculator converter">

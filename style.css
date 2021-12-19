@@ -180,6 +180,12 @@
 .calculator:nth-of-type(3) .result p:nth-child(3) {
     font-size: 15px;
 }
+.calculator:nth-of-type(3) .date-calculator {
+    display: none;
+}
+.calculator:nth-of-type(3) .date-calculator.active {
+    display: block;
+}
 
 .converter p {
     font-size: 30px;
