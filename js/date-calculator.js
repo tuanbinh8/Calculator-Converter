@@ -11,35 +11,27 @@ selectDateCalculator.onchange = () => {
     }
 }
 
-let dayInputs = Array.from(document.getElementsByClassName('day'))
-let monthInputs = Array.from(document.getElementsByClassName('month'))
-let yearInputs = Array.from(document.getElementsByClassName('year'))
-dayInputs.map((input) => {
-    input.onkeydown = (event) => {
-        event.preventDefault()
-    }
-})
-monthInputs.map((monthInput) => {
-    monthInput.onchange = () => {
-        let month = monthInput.selectedIndex + 1
-        dayInputs.map((dayInput) => {
-            if (month % 2 == 0) {
-                changeMaxDay(30)
-                if (month >= 8) {
-                    changeMaxDay(31)
-                }
-            }
-            if (month % 2 == 1) {
-                changeMaxDay(31)
-                if (month >= 8) {
-                    changeMaxDay(30)
-                }
-            }
-            //tính năm nhuận
-            function changeMaxDay(maxDay) {
-                dayInput.value = ''
-                dayInput.max = maxDay
-            }
-        })
-    }
-})
+let startingDate = document.querySelector('.starting-date:nth-of-type(1)')
+let endingDate = document.querySelector('.ending-date')
+
+startingDate.onchange = () => {
+    checkDatesDifference(startingDate.value, endingDate.value)
+}
+endingDate.onchange = () => {
+    checkDatesDifference(startingDate.value, endingDate.value)
+}
+function checkDatesDifference(startingDate, endingDate) {
+    let dateDifferenceAsMillisecond = Math.abs(new Date(startingDate) - new Date(endingDate))
+    let dateDifferenceAsDay = dateDifferenceAsMillisecond / (1000 * 60 * 60 * 24)
+    let dateDifference = []
+    if (dateDifferenceAsDay % 7 == 0)
+        dateDifference = [dateDifferenceAsDay / 7 + ' week(s)']
+    else
+        dateDifference = [Math.floor(dateDifferenceAsDay / 7) + ' week(s)', dateDifferenceAsDay % 7 + ' day(s)']
+    if (dateDifferenceAsDay % 365 == 0)
+        dateDifference = [dateDifferenceAsDay / 365 + ' year(s)']
+    else
+        dateDifference = [Math.floor(dateDifferenceAsDay / 365) + ' year(s)', Math.floor(dateDifferenceAsDay % 365 / 7) + ' week(s)', dateDifferenceAsDay % 365 % 7 + ' day(s)']
+    document.querySelector('.calculator:nth-of-type(3) .result').innerText = dateDifference.join(', ')
+    document.querySelector('.calculator:nth-of-type(3) .result-as-day').innerText = dateDifferenceAsDay + ' day(s)'
+}

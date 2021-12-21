@@ -99,75 +99,24 @@
                 </select>
                 <div class="date-calculator active">
                     <p>From</p>
-                    <div style="display: flex;">
-                        <select class='month'>
-                            <option value="">January</option>
-                            <option value="">February</option>
-                            <option value="">March</option>
-                            <option value="">April</option>
-                            <option value="">May</option>
-                            <option value="">June</option>
-                            <option value="">July</option>
-                            <option value="">August</option>
-                            <option value="">September</option>
-                            <option value="">October</option>
-                            <option value="">November</option>
-                            <option value="">December</option>
-                        </select>
-                        <input type="number" min="1" max='31' placeholder="day" class="day">,
-                        <input type="number" placeholder="year" class="year">
-                    </div>
+                    <input type="datetime-local" class="starting-date">
                     <p>To</p>
-                    <div style="display: flex;">
-                        <select class="month">
-                            <option value="">January</option>
-                            <option value="">February</option>
-                            <option value="">March</option>
-                            <option value="">April</option>
-                            <option value="">May</option>
-                            <option value="">June</option>
-                            <option value="">July</option>
-                            <option value="">August</option>
-                            <option value="">September</option>
-                            <option value="">October</option>
-                            <option value="">November</option>
-                            <option value="">December</option>
-                        </select>
-                        <input type="number" min="1" max='31' placeholder="day" class="day">,
-                        <input type="number" placeholder="year" class="year">
-                    </div>
-                    <div class="result">
+                    <input type="datetime-local" class="ending-date">
+                    <div style="margin-top: 20px;">
                         <p>Difference</p>
-                        <p>Same date</p>
-                        <p>0 day(s)</p>
+                        <p class="result"></p>
+                        <p class="result-as-day"></p>
                     </div>
                 </div>
                 <div class="date-calculator">
                     <p>From</p>
-                    <div style="display: flex;">
-                        <select class='month'>
-                            <option value="">January</option>
-                            <option value="">February</option>
-                            <option value="">March</option>
-                            <option value="">April</option>
-                            <option value="">May</option>
-                            <option value="">June</option>
-                            <option value="">July</option>
-                            <option value="">August</option>
-                            <option value="">September</option>
-                            <option value="">October</option>
-                            <option value="">November</option>
-                            <option value="">December</option>
-                        </select>
-                        <input type="number" min="1" max='31' placeholder="day" class="day">,
-                        <input type="number" placeholder="year" class="year">
-                    </div>
-                    <div>
-                        <input type="radio" name="" id="plus-date">
+                    <input type="datetime-local" name="" id="">
+                    <form>
+                        <input type="radio" name="plus-or-subtract-date" id="plus-date">
                         <label for="plus-date">Plus</label>
-                        <input type="radio" name="" id="subtract-date">
-                        <label for="subtract-date">subtract</label>
-                    </div>
+                        <input type="radio" name="plus-or-subtract-date" id="subtract-date">
+                        <label for="subtract-date">Subtract</label>
+                    </form>
                 </div>
             </div>
             <div class="calculator converter">
