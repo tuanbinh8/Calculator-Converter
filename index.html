@@ -17,8 +17,8 @@
         <div style="display: flex;">
             <div id="other-calculators" style="display: block;">
                 <h4>Calculator</h4>
-                <div class='active'>Standard</div>
-                <div>Date calculator</div>
+                <div>Standard</div>
+                <div class='active'>Date calculator</div>
                 <h4>Converter</h4>
                 <div>Length</div>
                 <div>Area</div>
@@ -29,7 +29,7 @@
                 <div>Time</div>
                 <div>Data</div>
             </div>
-            <div class="calculator active">
+            <div class="calculator">
                 <div class="top-bar">
                     <div class="other-calculators-bar">
                         <div></div>
@@ -99,24 +99,46 @@
                 </select>
                 <div class="date-calculator active">
                     <p>From</p>
-                    <input type="datetime-local" class="starting-date">
+                    <input type="date" id="starting-date" required>
                     <p>To</p>
-                    <input type="datetime-local" class="ending-date">
+                    <input type="date" id="ending-date" required>
                     <div style="margin-top: 20px;">
                         <p>Difference</p>
-                        <p class="result"></p>
-                        <p class="result-as-day"></p>
+                        <p class="result">0 year(s), 0 month(s), 0 week(s), 0 day(s)</p>
+                        <p class="result-as-day">0 day(s)</p>
                     </div>
                 </div>
                 <div class="date-calculator">
                     <p>From</p>
-                    <input type="datetime-local" name="" id="">
+                    <input type="date" name="" id="first-addend-date" required>
                     <form>
-                        <input type="radio" name="plus-or-subtract-date" id="plus-date">
-                        <label for="plus-date">Plus</label>
-                        <input type="radio" name="plus-or-subtract-date" id="subtract-date">
-                        <label for="subtract-date">Subtract</label>
+                        <div>
+                            <input type="radio" name="plus-or-subtract-date" id="plus-date" checked>
+                            <label for="plus-date">Plus</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="plus-or-subtract-date" id="subtract-date">
+                            <label for="subtract-date">Subtract</label>
+                        </div>
                     </form>
+                    <div style="margin-top: 20px;">
+                        <div style="display: flex; justify-content: space-around;">
+                            <label for="second-addend-year">Year:</label>
+                            <label for="second-addend-month">Month:</label>
+                            <label for="second-addend-week">Week:</label>
+                            <label for="second-addend-day">Day:</label>
+                        </div>
+                        <div style="display: flex; justify-content: space-around;">
+                            <input type="number" min="0" class="second-addend-date" id="second-addend-year" value="0">
+                            <input type="number" min="0" class="second-addend-date" id="second-addend-month" value="0">
+                            <input type="number" min="0" class="second-addend-date" id="second-addend-week" value="0">
+                            <input type="number" min="0" class="second-addend-date" id="second-addend-day" value="0">
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <p>Date</p>
+                        <p class="result"></p>
+                    </div>
                 </div>
             </div>
             <div class="calculator converter">

@@ -179,9 +179,26 @@
     margin: 0;
 }
 
+.calculator:nth-of-type(3) form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
 .calculator:nth-of-type(3) .result {
     font-size: 25px;
     font-weight: bold;
+}
+
+.calculator:nth-of-type(3) .date-calculator:nth-of-type(3) input[type='radio'] {
+    height: 15px;
+    width: 15px;
+}
+
+.calculator:nth-of-type(3) .date-calculator:nth-of-type(3) .second-addend-date {
+    width: 20%;
 }
 
 .converter p {
