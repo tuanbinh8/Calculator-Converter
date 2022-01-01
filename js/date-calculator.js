@@ -73,8 +73,14 @@ function addOrSubtractDays(firstAddendDate, secondAddendYear, secondAddendMonth,
     let daysAdded = secondAddendYear * 365 + secondAddendMonth * 30 + secondAddendWeek * 7 + secondAddendDay
     let result
     if (document.getElementById('plus-date').checked)
-        result = new Date(firstAddendDate.setDate(firstAddendDate.getDate() + daysAdded))
+        result = addDays(firstAddendDate, daysAdded)
     else
-        result = new Date(firstAddendDate.setDate(firstAddendDate.getDate() - daysAdded))
+        result = subtractDays(firstAddendDate, daysAdded)
     document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(3) .result').innerText = `${days[result.getDay()]}, ${months[result.getMonth()]} ${result.getDate()}, ${result.getFullYear()}`
+    function addDays(firstAddendDate, daysAdded) {
+        return new Date(firstAddendDate.setDate(firstAddendDate.getDate() + daysAdded))
+    }
+    function subtractDays(firstAddendDate, daysSubtracted) {
+        return new Date(firstAddendDate.setDate(firstAddendDate.getDate() - daysSubtracted))
+    }
 }

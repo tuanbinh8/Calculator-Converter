@@ -21,8 +21,8 @@
     width: 200px;
     margin-right: 5px;
     border: 2px black solid;
-    overflow: scroll;
-    overflow-x: hidden;
+    /* overflow: scroll;
+    overflow-x: hidden; */
 }
 
 #other-calculators div {
@@ -76,6 +76,7 @@
 }
 
 .calculator .button {
+    color: white;
     margin: 0px 5px 5px 5px;
     padding: 5px;
     width: 50px;
@@ -143,6 +144,7 @@
 
 .calculator:nth-of-type(2) .buttons .advance-symbols .button {
     background-color: rgb(1, 207, 1);
+    color: black;
 }
 
 .calculator:nth-of-type(2) .buttons .advance-symbols .button:active {
@@ -227,6 +229,27 @@
     color: white;
     background-color: black;
     text-decoration: none;
+}
+
+#history {
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    height: 422.917px;
+    width: 200px;
+    margin-left: 5px;
+    border: 2px black solid;
+    /* overflow: scroll;
+    overflow-x: hidden; */
+}
+
+#history div {
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#history div:hover {
+    background-color: rgb(168, 168, 168);
 }
 
 #extra-buttons {

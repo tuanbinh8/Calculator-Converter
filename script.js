@@ -1,7 +1,6 @@
 let selectOtherCalculatorsButtons = Array.from(document.querySelectorAll('#other-calculators div'))
 let calculators = Array.from(document.getElementsByClassName('calculator'))
 
-//dark mode
 document.getElementById('switching-mode-button').onclick = () => {
     Array.from(document.querySelectorAll('*')).map((elmt) => {
         if (!elmt.classList.contains('darkmode'))
@@ -38,5 +37,18 @@ selectOtherCalculatorsButtons.map((button) => {
             else
                 calculator.classList.add('active')
         })
+    }
+})
+
+let historyButtons = Array.from(document.getElementsByClassName('fa-history'))
+console.log(historyButtons);
+let history = document.getElementById('history')
+historyButtons.map((button) => {
+    button.onclick = () => {
+        alert(true)
+        if (history.style.display === 'block')
+            history.style.display = 'none'
+        else
+            history.style.display = 'block'
     }
 })

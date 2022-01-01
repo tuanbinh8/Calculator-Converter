@@ -21,8 +21,32 @@ let equal = document.querySelector('.calculator:nth-of-type(2) .equal')
 equal.onclick = () => {
     let output = document.querySelector('.calculator:nth-of-type(2) .output')
     let input = document.querySelector('.calculator:nth-of-type(2) .input')
-    console.log(input.innerHTML);
-    output.innerHTML = eval(input.innerHTML)
+    let characters = input.innerText.split('')
+    characters.map((character) => {
+        let place = characters.indexOf(character)
+        let nextCharacter = characters[place + 1]
+        while (!isNaN(nextCharacter) || nextCharacter == '.') {
+            if (!isNaN(character)) {
+                characters[place] += nextCharacter
+                characters.splice(place + 1, 1)
+            }
+            break
+        }
+        if (character == 'A' && characters[place + 1] == 'n' && characters[place + 2] == 's') {
+            characters[place] += characters[place + 1] + characters[place + 2]
+            characters.splice(place + 1, 2)
+        }
+        if (character == '√') {
+            characters[place] = 'Math.sqrt('
+            characters.splice(place + 2, 0, ')')
+        }
+        if (character == 'π')
+            characters[place] = Math.PI
+        if (character == '^')
+            character = '**'
+    })
+    console.log(characters);
+    output.innerHTML = eval(characters.join(''))
     Ans = Number(output.innerHTML)
 }
 
