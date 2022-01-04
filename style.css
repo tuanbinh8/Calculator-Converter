@@ -4,6 +4,12 @@
     margin: 0;
 }
 
+.icon {
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+}
+
 #container {
     cursor: default;
     width: 100vw;
@@ -21,8 +27,7 @@
     width: 200px;
     margin-right: 5px;
     border: 2px black solid;
-    /* overflow: scroll;
-    overflow-x: hidden; */
+    overflow: auto;
 }
 
 #other-calculators div {
@@ -67,12 +72,6 @@
     height: 3px;
     background-color: black;
     margin: 3px 0;
-}
-
-.calculator .top-bar .fa-history {
-    cursor: pointer;
-    margin: 5px;
-    font-size: 20px;
 }
 
 .calculator .button {
@@ -219,6 +218,50 @@
     flex-wrap: wrap;
 }
 
+#history {
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    height: 422.917px;
+    width: 264.110px;
+    margin-left: 5px;
+    border: 2px black solid;
+    overflow: auto;
+}
+
+#history .top-bar {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#history #history-content div {
+    margin-bottom: 10px;
+    padding: 0px 10px;
+    cursor: pointer;
+    text-align: right;
+    font-size: 20px;
+}
+
+#history #history-content div p {
+    margin-bottom: 5px;
+}
+
+#history #history-content div .input {
+    font-size: 15px;
+}
+
+#history #history-content div .output {
+    font-size: 20px;
+}
+
+#history #history-content div:hover {
+    background-color: rgb(168, 168, 168);
+}
+
+#extra-buttons {
+    display: flex;
+}
+
 .extra-button {
     display: block;
     padding: 10px;
@@ -229,29 +272,4 @@
     color: white;
     background-color: black;
     text-decoration: none;
-}
-
-#history {
-    background-color: rgb(241, 241, 241);
-    border-radius: 5px;
-    height: 422.917px;
-    width: 200px;
-    margin-left: 5px;
-    border: 2px black solid;
-    /* overflow: scroll;
-    overflow-x: hidden; */
-}
-
-#history div {
-    padding: 5px 10px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-#history div:hover {
-    background-color: rgb(168, 168, 168);
-}
-
-#extra-buttons {
-    display: flex;
 }

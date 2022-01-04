@@ -30,573 +30,590 @@
                 <div>Data</div>
             </div>
             <!-- <div> -->
-                <div class="calculator active">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <h4>Standard</h4>
-                        <i class="fas fa-history"></i>
+            <div class="calculator active">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
-                    <div class="result">
-                        <div class="input"></div>
-                        <div class="output"></div>
+                    <h4>Standard</h4>
+                    <div class="history-button">
+                        <i class="fas fa-history icon"></i>
                     </div>
-                    <div class="buttons">
-                        <div class='up-button'>
-                            <div class="advance-symbols">
-                                <div class="button">%</div>
-                                <div class="button">^</div>
-                                <div class="button">√</div>
-                                <div class="button">(</div>
-                                <div class="button">)</div>
-                            </div>
+                </div>
+                <div class="result">
+                    <div class="input"></div>
+                    <div class="output"></div>
+                </div>
+                <div class="buttons">
+                    <div class='up-button'>
+                        <div class="advance-symbols">
+                            <div class="button">%</div>
+                            <div class="button">^</div>
+                            <div class="button">√</div>
+                            <div class="button">(</div>
+                            <div class="button">)</div>
                         </div>
-                        <div class="down-buttons">
-                            <div class="numbers">
-                                <div class="button">9</div>
-                                <div class="button">8</div>
-                                <div class="button">7</div>
-                                <div class="button">6</div>
-                                <div class="button">5</div>
-                                <div class="button">4</div>
-                                <div class="button">3</div>
-                                <div class="button">2</div>
-                                <div class="button">1</div>
-                                <div class="button">0</div>
-                                <div class="button">.</div>
-                                <div class="button">&#960;</div>
+                    </div>
+                    <div class="down-buttons">
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
+                            <div class="button">&#960;</div>
+                        </div>
+                        <div class="basic-symbols">
+                            <div style="display: flex;">
+                                <div class="button delete DEL" style="font-size: 20px;">DEL</div>
+                                <div class="button delete AC" style="font-size: 20px;">AC</div>
                             </div>
-                            <div class="basic-symbols">
-                                <div style="display: flex;">
-                                    <div class="button delete DEL" style="font-size: 20px;">DEL</div>
-                                    <div class="button delete AC" style="font-size: 20px;">AC</div>
-                                </div>
-                                <div class="button">/</div>
-                                <div class="button">*</div>
-                                <div class="button">-</div>
-                                <div class="button">+</div>
-                                <div class="button" style="font-size: 20px;">Ans</div>
-                                <div class="button equal">=</div>
-                            </div>
+                            <div class="button">/</div>
+                            <div class="button">*</div>
+                            <div class="button">-</div>
+                            <div class="button">+</div>
+                            <div class="button" style="font-size: 20px;">Ans</div>
+                            <div class="button equal">=</div>
                         </div>
                     </div>
                 </div>
-                <div class="calculator">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <h4>Date calculator</h4>
-                        <i class="fas fa-history"></i>
+            </div>
+            <div class="calculator">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
-                    <select id="select-date-calculator">
-                        <option value="">Difference between dates</option>
-                        <option value="">Add or subtract days</option>
+                    <h4>Date calculator</h4>
+                    <div style="width: 17px;"></div>
+                </div>
+                <select id="select-date-calculator">
+                    <option value="">Difference between dates</option>
+                    <option value="">Add or subtract days</option>
+                </select>
+                <div class="date-calculator active">
+                    <p>From</p>
+                    <input type="date" id="starting-date" required>
+                    <p>To</p>
+                    <input type="date" id="ending-date" required>
+                    <div style="margin-top: 20px;">
+                        <p>Difference</p>
+                        <p class="result">0 year(s), 0 month(s), 0 week(s), 0 day(s)</p>
+                        <p class="result-as-day">0 day(s)</p>
+                    </div>
+                </div>
+                <div class="date-calculator">
+                    <p>From</p>
+                    <input type="date" name="" id="first-addend-date" required>
+                    <form>
+                        <div>
+                            <input type="radio" name="plus-or-subtract-date" id="plus-date" checked>
+                            <label for="plus-date">Plus</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="plus-or-subtract-date" id="subtract-date">
+                            <label for="subtract-date">Subtract</label>
+                        </div>
+                    </form>
+                    <div style="margin-top: 20px;">
+                        <div style="display: flex; justify-content: space-around;">
+                            <label for="second-addend-year">Year:</label>
+                            <label for="second-addend-month">Month:</label>
+                            <label for="second-addend-week">Week:</label>
+                            <label for="second-addend-day">Day:</label>
+                        </div>
+                        <div style="display: flex; justify-content: space-around;">
+                            <input type="number" min="0" class="second-addend-date" id="second-addend-year" value="0">
+                            <input type="number" min="0" class="second-addend-date" id="second-addend-month" value="0">
+                            <input type="number" min="0" class="second-addend-date" id="second-addend-week" value="0">
+                            <input type="number" min="0" class="second-addend-date" id="second-addend-day" value="0">
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <p>Date</p>
+                        <p class="result"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator converter">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h4>Length</h4>
+                    <div style="width: 17px;"></div>
+                </div>
+                <div style="margin: 4px;">
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Millimeter(s)</option>
+                        <option value="">Centimeter(s)</option>
+                        <option value="">Meter(s)</option>
+                        <option value="">Kilometer(s)</option>
+                        <option value="">Inch(es)</option>
+                        <option value="">Foot(Feet)</option>
+                        <option value="">Yard(s)</option>
+                        <option value="">Mile(s)</option>
+                        <option value="">Nautical mile(s)</option>
                     </select>
-                    <div class="date-calculator active">
-                        <p>From</p>
-                        <input type="date" id="starting-date" required>
-                        <p>To</p>
-                        <input type="date" id="ending-date" required>
-                        <div style="margin-top: 20px;">
-                            <p>Difference</p>
-                            <p class="result">0 year(s), 0 month(s), 0 week(s), 0 day(s)</p>
-                            <p class="result-as-day">0 day(s)</p>
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Millimeter(s)</option>
+                        <option value="">Centimeter(s)</option>
+                        <option value="">Meter(s)</option>
+                        <option value="">Kilometer(s)</option>
+                        <option value="">Inch(es)</option>
+                        <option value="">Foot(Feet)</option>
+                        <option value="">Yard(s)</option>
+                        <option value="">Mile(s)</option>
+                        <option value="">Nautical mile(s)</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div class="buttons">
+                        <div style="display: flex;justify-content: right;">
+                            <!-- <div class="button" style="width: 100%;background-color: blue;">Convert</div> -->
+                            <div class="button delete DEL" style="font-size: 20px;">DEL</div>
+                            <div class="button delete AC" style="font-size: 20px;">AC</div>
                         </div>
-                    </div>
-                    <div class="date-calculator">
-                        <p>From</p>
-                        <input type="date" name="" id="first-addend-date" required>
-                        <form>
-                            <div>
-                                <input type="radio" name="plus-or-subtract-date" id="plus-date" checked>
-                                <label for="plus-date">Plus</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="plus-or-subtract-date" id="subtract-date">
-                                <label for="subtract-date">Subtract</label>
-                            </div>
-                        </form>
-                        <div style="margin-top: 20px;">
-                            <div style="display: flex; justify-content: space-around;">
-                                <label for="second-addend-year">Year:</label>
-                                <label for="second-addend-month">Month:</label>
-                                <label for="second-addend-week">Week:</label>
-                                <label for="second-addend-day">Day:</label>
-                            </div>
-                            <div style="display: flex; justify-content: space-around;">
-                                <input type="number" min="0" class="second-addend-date" id="second-addend-year"
-                                    value="0">
-                                <input type="number" min="0" class="second-addend-date" id="second-addend-month"
-                                    value="0">
-                                <input type="number" min="0" class="second-addend-date" id="second-addend-week"
-                                    value="0">
-                                <input type="number" min="0" class="second-addend-date" id="second-addend-day"
-                                    value="0">
-                            </div>
-                        </div>
-                        <div style="margin-top: 20px;">
-                            <p>Date</p>
-                            <p class="result"></p>
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
                         </div>
                     </div>
                 </div>
-                <div class="calculator converter">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+            </div>
+            <div class="calculator converter">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h4>Area</h4>
+                    <div style="width: 17px;"></div>
+                </div>
+                <div style="margin: 4px;">
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Square millimeter(s)</option>
+                        <option value="">Square centimeter(s)</option>
+                        <option value="">Square meter(s)</option>
+                        <option value="">Hectare(s)</option>
+                        <option value="">Square kilometer(s)</option>
+                        <option value="">Square inch(es)</option>
+                        <option value="">Square foot(feet)</option>
+                        <option value="">Square yard(s)</option>
+                        <option value="">Square mile(s)</option>
+                        <option value="">Acre(s)</option>
+                    </select>
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Square millimeter(s)</option>
+                        <option value="">Square centimeter(s)</option>
+                        <option value="">Square meter(s)</option>
+                        <option value="">Hectare(s)</option>
+                        <option value="">Square kilometer(s)</option>
+                        <option value="">Square inch(es)</option>
+                        <option value="">Square foot(feet)</option>
+                        <option value="">Square yard(s)</option>
+                        <option value="">Square mile(s)</option>
+                        <option value="">Acre(s)</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div class="buttons">
+                        <div style="display: flex;justify-content: right;">
+                            <div class="button delete DEL" style="font-size: 20px;">DEL</div>
+                            <div class="button delete AC" style="font-size: 20px;">AC</div>
                         </div>
-                        <h4>Length</h4>
-                    </div>
-                    <div style="margin: 4px;">
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Millimeter(s)</option>
-                            <option value="">Centimeter(s)</option>
-                            <option value="">Meter(s)</option>
-                            <option value="">Kilometer(s)</option>
-                            <option value="">Inch(es)</option>
-                            <option value="">Foot(Feet)</option>
-                            <option value="">Yard(s)</option>
-                            <option value="">Mile(s)</option>
-                            <option value="">Nautical mile(s)</option>
-                        </select>
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Millimeter(s)</option>
-                            <option value="">Centimeter(s)</option>
-                            <option value="">Meter(s)</option>
-                            <option value="">Kilometer(s)</option>
-                            <option value="">Inch(es)</option>
-                            <option value="">Foot(Feet)</option>
-                            <option value="">Yard(s)</option>
-                            <option value="">Mile(s)</option>
-                            <option value="">Nautical mile(s)</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="buttons">
-                            <div style="display: flex;justify-content: right;">
-                                <div class="button" style="width: 100%;background-color: blue;">Convert</div>
-                                <div class="button delete DEL" style="font-size: 20px;">DEL</div>
-                                <div class="button delete AC" style="font-size: 20px;">AC</div>
-                            </div>
-                            <div class="numbers">
-                                <div class="button">9</div>
-                                <div class="button">8</div>
-                                <div class="button">7</div>
-                                <div class="button">6</div>
-                                <div class="button">5</div>
-                                <div class="button">4</div>
-                                <div class="button">3</div>
-                                <div class="button">2</div>
-                                <div class="button">1</div>
-                                <div class="button">0</div>
-                                <div class="button">.</div>
-                            </div>
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
                         </div>
                     </div>
                 </div>
-                <div class="calculator converter">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+            </div>
+            <div class="calculator converter">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h4>Volume</h4>
+                    <div style="width: 17px;"></div>
+                </div>
+                <div style="margin: 4px;">
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Cubic millimeter(s)</option>
+                        <option value="">Milliliter(s)</option>
+                        <option value="">Liter(s)</option>
+                        <option value="">Cubic meter(s)</option>
+                        <option value="">Cubic inch(es)</option>
+                        <option value="">Cubic foot(feet)</option>
+                        <option value="">Cubic yard(s)</option>
+                    </select>
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Cubic millimeter(s)</option>
+                        <option value="">Milliliter(s)</option>
+                        <option value="">Liter(s)</option>
+                        <option value="">Cubic meter(s)</option>
+                        <option value="">Cubic inch(es)</option>
+                        <option value="">Cubic foot(feet)</option>
+                        <option value="">Cubic yard(s)</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div class="buttons">
+                        <div style="display: flex;justify-content: right;">
+                            <div class="button delete DEL" style="font-size: 20px;">DEL</div>
+                            <div class="button delete AC" style="font-size: 20px;">AC</div>
                         </div>
-                        <h4>Area</h4>
-                    </div>
-                    <div style="margin: 4px;">
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Square millimeter(s)</option>
-                            <option value="">Square centimeter(s)</option>
-                            <option value="">Square meter(s)</option>
-                            <option value="">Hectare(s)</option>
-                            <option value="">Square kilometer(s)</option>
-                            <option value="">Square inch(es)</option>
-                            <option value="">Square foot(feet)</option>
-                            <option value="">Square yard(s)</option>
-                            <option value="">Square mile(s)</option>
-                            <option value="">Acre(s)</option>
-                        </select>
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Square millimeter(s)</option>
-                            <option value="">Square centimeter(s)</option>
-                            <option value="">Square meter(s)</option>
-                            <option value="">Hectare(s)</option>
-                            <option value="">Square kilometer(s)</option>
-                            <option value="">Square inch(es)</option>
-                            <option value="">Square foot(feet)</option>
-                            <option value="">Square yard(s)</option>
-                            <option value="">Square mile(s)</option>
-                            <option value="">Acre(s)</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="buttons">
-                            <div style="display: flex;justify-content: right;">
-                                <div class="button delete DEL" style="font-size: 20px;">DEL</div>
-                                <div class="button delete AC" style="font-size: 20px;">AC</div>
-                            </div>
-                            <div class="numbers">
-                                <div class="button">9</div>
-                                <div class="button">8</div>
-                                <div class="button">7</div>
-                                <div class="button">6</div>
-                                <div class="button">5</div>
-                                <div class="button">4</div>
-                                <div class="button">3</div>
-                                <div class="button">2</div>
-                                <div class="button">1</div>
-                                <div class="button">0</div>
-                                <div class="button">.</div>
-                            </div>
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
                         </div>
                     </div>
                 </div>
-                <div class="calculator converter">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+            </div>
+            <div class="calculator converter">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h4>Weight & Mass</h4>
+                    <div style="width: 17px;"></div>
+                </div>
+                <div style="margin: 4px;">
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Milligram(s)</option>
+                        <option value="">Centigram(s)</option>
+                        <option value="">Decigram(s)</option>
+                        <option value="">Gram(s)</option>
+                        <option value="">Decagram(s)</option>
+                        <option value="">Hectogram(s)</option>
+                        <option value="">Kilogram(s)</option>
+                        <option value="">Metric ton(s)</option>
+                    </select>
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Milligram(s)</option>
+                        <option value="">Centigram(s)</option>
+                        <option value="">Decigram(s)</option>
+                        <option value="">Gram(s)</option>
+                        <option value="">Decagram(s)</option>
+                        <option value="">Hectogram(s)</option>
+                        <option value="">Kilogram(s)</option>
+                        <option value="">Metric ton(s)</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div class="buttons">
+                        <div style="display: flex;justify-content: right;">
+                            <div class="button delete DEL" style="font-size: 20px;">DEL</div>
+                            <div class="button delete AC" style="font-size: 20px;">AC</div>
                         </div>
-                        <h4>Volume</h4>
-                    </div>
-                    <div style="margin: 4px;">
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Cubic millimeter(s)</option>
-                            <option value="">Milliliter(s)</option>
-                            <option value="">Liter(s)</option>
-                            <option value="">Cubic meter(s)</option>
-                            <option value="">Cubic inch(es)</option>
-                            <option value="">Cubic foot(feet)</option>
-                            <option value="">Cubic yard(s)</option>
-                        </select>
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Cubic millimeter(s)</option>
-                            <option value="">Milliliter(s)</option>
-                            <option value="">Liter(s)</option>
-                            <option value="">Cubic meter(s)</option>
-                            <option value="">Cubic inch(es)</option>
-                            <option value="">Cubic foot(feet)</option>
-                            <option value="">Cubic yard(s)</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="buttons">
-                            <div style="display: flex;justify-content: right;">
-                                <div class="button delete DEL" style="font-size: 20px;">DEL</div>
-                                <div class="button delete AC" style="font-size: 20px;">AC</div>
-                            </div>
-                            <div class="numbers">
-                                <div class="button">9</div>
-                                <div class="button">8</div>
-                                <div class="button">7</div>
-                                <div class="button">6</div>
-                                <div class="button">5</div>
-                                <div class="button">4</div>
-                                <div class="button">3</div>
-                                <div class="button">2</div>
-                                <div class="button">1</div>
-                                <div class="button">0</div>
-                                <div class="button">.</div>
-                            </div>
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
                         </div>
                     </div>
                 </div>
-                <div class="calculator converter">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+            </div>
+            <div class="calculator converter">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h4>Temperature</h4>
+                    <div style="width: 17px;"></div>
+                </div>
+                <div style="margin: 4px;">
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Celsius</option>
+                        <option value="">Fahrenheit</option>
+                        <option value="">Kelvin</option>
+                    </select>
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Celsius</option>
+                        <option value="">Fahrenheit</option>
+                        <option value="">Kelvin</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div class="buttons">
+                        <div style="display: flex;justify-content: right;">
+                            <div class="button delete DEL" style="font-size: 20px;">DEL</div>
+                            <div class="button delete AC" style="font-size: 20px;">AC</div>
                         </div>
-                        <h4>Weight & Mass</h4>
-                    </div>
-                    <div style="margin: 4px;">
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Milligram(s)</option>
-                            <option value="">Centigram(s)</option>
-                            <option value="">Decigram(s)</option>
-                            <option value="">Gram(s)</option>
-                            <option value="">Decagram(s)</option>
-                            <option value="">Hectogram(s)</option>
-                            <option value="">Kilogram(s)</option>
-                            <option value="">Metric ton(s)</option>
-                        </select>
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Milligram(s)</option>
-                            <option value="">Centigram(s)</option>
-                            <option value="">Decigram(s)</option>
-                            <option value="">Gram(s)</option>
-                            <option value="">Decagram(s)</option>
-                            <option value="">Hectogram(s)</option>
-                            <option value="">Kilogram(s)</option>
-                            <option value="">Metric ton(s)</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="buttons">
-                            <div style="display: flex;justify-content: right;">
-                                <div class="button delete DEL" style="font-size: 20px;">DEL</div>
-                                <div class="button delete AC" style="font-size: 20px;">AC</div>
-                            </div>
-                            <div class="numbers">
-                                <div class="button">9</div>
-                                <div class="button">8</div>
-                                <div class="button">7</div>
-                                <div class="button">6</div>
-                                <div class="button">5</div>
-                                <div class="button">4</div>
-                                <div class="button">3</div>
-                                <div class="button">2</div>
-                                <div class="button">1</div>
-                                <div class="button">0</div>
-                                <div class="button">.</div>
-                            </div>
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
                         </div>
                     </div>
                 </div>
-                <div class="calculator converter">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+            </div>
+            <div class="calculator converter">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h4>Speed</h4>
+                    <div style="width: 17px;"></div>
+                </div>
+                <div style="margin: 4px;">
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Centimeter(s) per second</option>
+                        <option value="">Meter(s) per second</option>
+                        <option value="">Kilometer(s) per hour</option>
+                        <option value="">Mile(s) per hour</option>
+                        <option value="">Knot(s)</option>
+                        <option value="">Mach</option>
+                    </select>
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Centimeter(s) per second</option>
+                        <option value="">Meter(s) per second</option>
+                        <option value="">Kilometer(s) per hour</option>
+                        <option value="">Mile(s) per hour</option>
+                        <option value="">Knot(s)</option>
+                        <option value="">Mach</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div class="buttons">
+                        <div style="display: flex;justify-content: right;">
+                            <div class="button delete DEL" style="font-size: 20px;">DEL</div>
+                            <div class="button delete AC" style="font-size: 20px;">AC</div>
                         </div>
-                        <h4>Temperature</h4>
-                    </div>
-                    <div style="margin: 4px;">
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Celsius</option>
-                            <option value="">Fahrenheit</option>
-                            <option value="">Kelvin</option>
-                        </select>
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Celsius</option>
-                            <option value="">Fahrenheit</option>
-                            <option value="">Kelvin</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="buttons">
-                            <div style="display: flex;justify-content: right;">
-                                <div class="button delete DEL" style="font-size: 20px;">DEL</div>
-                                <div class="button delete AC" style="font-size: 20px;">AC</div>
-                            </div>
-                            <div class="numbers">
-                                <div class="button">9</div>
-                                <div class="button">8</div>
-                                <div class="button">7</div>
-                                <div class="button">6</div>
-                                <div class="button">5</div>
-                                <div class="button">4</div>
-                                <div class="button">3</div>
-                                <div class="button">2</div>
-                                <div class="button">1</div>
-                                <div class="button">0</div>
-                                <div class="button">.</div>
-                            </div>
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
                         </div>
                     </div>
                 </div>
-                <div class="calculator converter">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+            </div>
+            <div class="calculator converter">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h4>Time</h4>
+                    <div style="width: 17px;"></div>
+                </div>
+                <div style="margin: 4px;">
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Microsecond(s)</option>
+                        <option value="">Millisecond(s)</option>
+                        <option value="">Second(s)</option>
+                        <option value="">Minute(s)</option>
+                        <option value="">Hour(s)</option>
+                        <option value="">Day(s)</option>
+                        <option value="">Week(s)</option>
+                        <option value="">Year(s)</option>
+                    </select>
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Microsecond(s)</option>
+                        <option value="">Millisecond(s)</option>
+                        <option value="">Second(s)</option>
+                        <option value="">Minute(s)</option>
+                        <option value="">Hour(s)</option>
+                        <option value="">Day(s)</option>
+                        <option value="">Week(s)</option>
+                        <option value="">Year(s)</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div class="buttons">
+                        <div style="display: flex;justify-content: right;">
+                            <div class="button delete DEL" style="font-size: 20px;">DEL</div>
+                            <div class="button delete AC" style="font-size: 20px;">AC</div>
                         </div>
-                        <h4>Speed</h4>
-                    </div>
-                    <div style="margin: 4px;">
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Centimeter(s) per second</option>
-                            <option value="">Meter(s) per second</option>
-                            <option value="">Kilometer(s) per hour</option>
-                            <option value="">Mile(s) per hour</option>
-                            <option value="">Knot(s)</option>
-                            <option value="">Mach</option>
-                        </select>
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Centimeter(s) per second</option>
-                            <option value="">Meter(s) per second</option>
-                            <option value="">Kilometer(s) per hour</option>
-                            <option value="">Mile(s) per hour</option>
-                            <option value="">Knot(s)</option>
-                            <option value="">Mach</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="buttons">
-                            <div style="display: flex;justify-content: right;">
-                                <div class="button delete DEL" style="font-size: 20px;">DEL</div>
-                                <div class="button delete AC" style="font-size: 20px;">AC</div>
-                            </div>
-                            <div class="numbers">
-                                <div class="button">9</div>
-                                <div class="button">8</div>
-                                <div class="button">7</div>
-                                <div class="button">6</div>
-                                <div class="button">5</div>
-                                <div class="button">4</div>
-                                <div class="button">3</div>
-                                <div class="button">2</div>
-                                <div class="button">1</div>
-                                <div class="button">0</div>
-                                <div class="button">.</div>
-                            </div>
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
                         </div>
                     </div>
                 </div>
-                <div class="calculator converter">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+            </div>
+            <div class="calculator converter">
+                <div class="top-bar">
+                    <div class="other-calculators-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h4>Data</h4>
+                    <div style="width: 17px;"></div>
+                </div>
+                <div style="margin: 4px;">
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Byte(s)</option>
+                        <option value="">Bit(s)</option>
+                        <option value="">Kilobyte(s)</option>
+                        <option value="">Kilobit(s)</option>
+                        <option value="">Megabyte(s)</option>
+                        <option value="">Megabit(s)</option>
+                        <option value="">Gigabyte(s)</option>
+                        <option value="">Gigabit(s)</option>
+                        <option value="">Terabyte(s)</option>
+                        <option value="">Terabit(s)</option>
+                        <option value="">Petabyte(s)</option>
+                        <option value="">Petabit(s)</option>
+                        <option value="">Exabyte(s)</option>
+                        <option value="">Exabit(s)</option>
+                        <option value="">Zettabyte(s)</option>
+                        <option value="">Zettabit(s)</option>
+                        <option value="">Yottabyte(s)</option>
+                        <option value="">Yottabit(s)</option>
+                    </select>
+                    <p>0</p>
+                    <select name="" id="">
+                        <option value="">Byte(s)</option>
+                        <option value="">Bit(s)</option>
+                        <option value="">Kilobyte(s)</option>
+                        <option value="">Kilobit(s)</option>
+                        <option value="">Megabyte(s)</option>
+                        <option value="">Megabit(s)</option>
+                        <option value="">Gigabyte(s)</option>
+                        <option value="">Gigabit(s)</option>
+                        <option value="">Terabyte(s)</option>
+                        <option value="">Terabit(s)</option>
+                        <option value="">Petabyte(s)</option>
+                        <option value="">Petabit(s)</option>
+                        <option value="">Exabyte(s)</option>
+                        <option value="">Exabit(s)</option>
+                        <option value="">Zettabyte(s)</option>
+                        <option value="">Zettabit(s)</option>
+                        <option value="">Yottabyte(s)</option>
+                        <option value="">Yottabit(s)</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div class="buttons">
+                        <div style="display: flex;justify-content: right;">
+                            <div class="button delete DEL" style="font-size: 20px;">DEL</div>
+                            <div class="button delete AC" style="font-size: 20px;">AC</div>
                         </div>
-                        <h4>Time</h4>
-                    </div>
-                    <div style="margin: 4px;">
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Microsecond(s)</option>
-                            <option value="">Millisecond(s)</option>
-                            <option value="">Second(s)</option>
-                            <option value="">Minute(s)</option>
-                            <option value="">Hour(s)</option>
-                            <option value="">Day(s)</option>
-                            <option value="">Week(s)</option>
-                            <option value="">Year(s)</option>
-                        </select>
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Microsecond(s)</option>
-                            <option value="">Millisecond(s)</option>
-                            <option value="">Second(s)</option>
-                            <option value="">Minute(s)</option>
-                            <option value="">Hour(s)</option>
-                            <option value="">Day(s)</option>
-                            <option value="">Week(s)</option>
-                            <option value="">Year(s)</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="buttons">
-                            <div style="display: flex;justify-content: right;">
-                                <div class="button delete DEL" style="font-size: 20px;">DEL</div>
-                                <div class="button delete AC" style="font-size: 20px;">AC</div>
-                            </div>
-                            <div class="numbers">
-                                <div class="button">9</div>
-                                <div class="button">8</div>
-                                <div class="button">7</div>
-                                <div class="button">6</div>
-                                <div class="button">5</div>
-                                <div class="button">4</div>
-                                <div class="button">3</div>
-                                <div class="button">2</div>
-                                <div class="button">1</div>
-                                <div class="button">0</div>
-                                <div class="button">.</div>
-                            </div>
+                        <div class="numbers">
+                            <div class="button">9</div>
+                            <div class="button">8</div>
+                            <div class="button">7</div>
+                            <div class="button">6</div>
+                            <div class="button">5</div>
+                            <div class="button">4</div>
+                            <div class="button">3</div>
+                            <div class="button">2</div>
+                            <div class="button">1</div>
+                            <div class="button">0</div>
+                            <div class="button">.</div>
                         </div>
                     </div>
                 </div>
-                <div class="calculator converter">
-                    <div class="top-bar">
-                        <div class="other-calculators-bar">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <h4>Data</h4>
-                    </div>
-                    <div style="margin: 4px;">
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Kilobyte(s)</option>
-                            <option value="">Kilobit(s)</option>
-                            <option value="">Megabyte(s)</option>
-                            <option value="">Megabit(s)</option>
-                            <option value="">Gigabyte(s)</option>
-                            <option value="">Gigabit(s)</option>
-                            <option value="">Terabyte(s)</option>
-                            <option value="">Terabit(s)</option>
-                            <option value="">Petabyte(s)</option>
-                            <option value="">Petabit(s)</option>
-                            <option value="">Exabyte(s)</option>
-                            <option value="">Exabit(s)</option>
-                            <option value="">Zettabyte(s)</option>
-                            <option value="">Zettabit(s)</option>
-                            <option value="">Yottabyte(s)</option>
-                            <option value="">Yottabit(s)</option>
-                        </select>
-                        <p>0</p>
-                        <select name="" id="">
-                            <option value="">Kilobyte(s)</option>
-                            <option value="">Kilobit(s)</option>
-                            <option value="">Megabyte(s)</option>
-                            <option value="">Megabit(s)</option>
-                            <option value="">Gigabyte(s)</option>
-                            <option value="">Gigabit(s)</option>
-                            <option value="">Terabyte(s)</option>
-                            <option value="">Terabit(s)</option>
-                            <option value="">Petabyte(s)</option>
-                            <option value="">Petabit(s)</option>
-                            <option value="">Exabyte(s)</option>
-                            <option value="">Exabit(s)</option>
-                            <option value="">Zettabyte(s)</option>
-                            <option value="">Zettabit(s)</option>
-                            <option value="">Yottabyte(s)</option>
-                            <option value="">Yottabit(s)</option>
-                        </select>
-                    </div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="buttons">
-                            <div style="display: flex;justify-content: right;">
-                                <div class="button delete DEL" style="font-size: 20px;">DEL</div>
-                                <div class="button delete AC" style="font-size: 20px;">AC</div>
-                            </div>
-                            <div class="numbers">
-                                <div class="button">9</div>
-                                <div class="button">8</div>
-                                <div class="button">7</div>
-                                <div class="button">6</div>
-                                <div class="button">5</div>
-                                <div class="button">4</div>
-                                <div class="button">3</div>
-                                <div class="button">2</div>
-                                <div class="button">1</div>
-                                <div class="button">0</div>
-                                <div class="button">.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
             <!-- </div> -->
             <div id="history" style="display: block;">
-                <h4>History</h4>
-                <div></div>
+                <div class="top-bar">
+                    <h4>History</h4>
+                    <div class="delete-history-button">
+                        <i class="far fa-trash-alt icon"></i>
+                    </div>
+                </div>
+                <!-- <input type="checkbox" name="" id="save-history">
+                <label for="save-history">Save history even if you reload or exit page</label> -->
+                <div id="history-content"></div>
             </div>
         </div>
         <div id='extra-buttons'>

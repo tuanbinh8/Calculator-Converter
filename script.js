@@ -2,11 +2,11 @@ let selectOtherCalculatorsButtons = Array.from(document.querySelectorAll('#other
 let calculators = Array.from(document.getElementsByClassName('calculator'))
 
 document.getElementById('switching-mode-button').onclick = () => {
-    Array.from(document.querySelectorAll('*')).map((elmt) => {
-        if (!elmt.classList.contains('darkmode'))
-            elmt.classList.add('darkmode')
+    Array.from(document.querySelectorAll('*')).map((element) => {
+        if (!element.classList.contains('darkmode'))
+            element.classList.add('darkmode')
         else
-            elmt.classList.remove('darkmode')
+            element.classList.remove('darkmode')
     })
 }
 
@@ -31,24 +31,35 @@ selectOtherCalculatorsButtons.map((button) => {
                 button.classList.add('active')
         })
         let curentCalculator = calculators[selectOtherCalculatorsButtons.indexOf(button)]
+        curentCalculator.classList.add('active')
         calculators.map((calculator) => {
             if (calculator !== curentCalculator)
                 calculator.classList.remove('active')
-            else
-                calculator.classList.add('active')
         })
     }
 })
+// let historyButtons = Array.from(document.getElementsByClassName('history-button'))
+// let historyList = document.getElementById('history')
+// historyButtons.map((button) => {
+//     button.onclick = () => {
+//         if (historyList.style.display === 'block')
+//             historyList.style.display = 'none'
+//         else
+//             historyList.style.display = 'block'
+//     }
+// })
+let historyButton = document.querySelector('.history-button')
+let historyList = document.getElementById('history')
+let historyContent = document.getElementById('history-content')
+historyButton.onclick = () => {
+    if (historyList.style.display === 'block')
+        historyList.style.display = 'none'
+    else
+        historyList.style.display = 'block'
+}
 
-let historyButtons = Array.from(document.getElementsByClassName('fa-history'))
-console.log(historyButtons);
-let history = document.getElementById('history')
-historyButtons.map((button) => {
-    button.onclick = () => {
-        alert(true)
-        if (history.style.display === 'block')
-            history.style.display = 'none'
-        else
-            history.style.display = 'block'
-    }
-})
+let deleteHistoryButton = document.querySelector('.delete-history-button')
+
+deleteHistoryButton.onclick = ()=>{
+    historyContent.innerHTML=''
+}
