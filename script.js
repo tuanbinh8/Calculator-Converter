@@ -36,6 +36,8 @@ selectOtherCalculatorsButtons.map((button) => {
             if (calculator !== curentCalculator)
                 calculator.classList.remove('active')
         })
+        if (selectOtherCalculatorsButtons.indexOf(button) !== 0)
+            historyList.style.display='none'
     }
 })
 // let historyButtons = Array.from(document.getElementsByClassName('history-button'))

@@ -1,7 +1,7 @@
 let Ans = localStorage.ans
 
-let buttons = [Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')), Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .basic-symbols .button')), Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .advance-symbols .button'))]
-buttons.map((listOfButtons) => {
+let standardCalculatorButtons = [Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')), Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .basic-symbols .button')), Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .advance-symbols .button'))]
+standardCalculatorButtons.map((listOfButtons) => {
     listOfButtons.map((button) => {
         button.onclick = () => {
             let input = document.querySelector('.calculator:nth-of-type(2) .input')
@@ -49,16 +49,27 @@ equal.onclick = () => {
             console.log(characters);
             characters.splice(place + 2, 0, ')')
         }
+        if (character == '!') {
+            characters[place] = Number(characters[place - 1])
+            for (let i = characters[place - 1]-1; i > 0; i--) {
+                characters[place]*=i
+            }
+            characters.splice(place-1,1)
+        }
     })
     console.log(characters);
     try {
         if (characters.length !== 0) {
             let result = eval(characters.join(''))
-            console.log(result);
             if (isNaN(result)) {
                 throw 'SyntaxError'
             }
             else {
+                console.log(result);
+                if (String(result).includes('e+'))
+                    output.style.fontSize = '23px'
+                else
+                    output.style.fontSize = '25px'
                 output.innerHTML = result
                 Ans = result
                 localStorage.ans = Ans
@@ -83,16 +94,16 @@ equal.onclick = () => {
     }
 }
 
-let DELButtons = document.querySelector('.calculator:nth-of-type(2) .DEL')
-DELButtons.onclick = () => {
+let standardCalculatorDELButton = document.querySelector('.calculator:nth-of-type(2) .DEL')
+standardCalculatorDELButton.onclick = () => {
     let input = document.querySelector('.calculator:nth-of-type(2) .input')
     let output = document.querySelector('.calculator:nth-of-type(2) .output')
     if (output.innerHTML === '')
         input.innerHTML = input.innerHTML.slice(0, -1)
 }
 
-let ACButtons = document.querySelector('.calculator:nth-of-type(2) .AC')
-ACButtons.onclick = () => {
+let standardCalculatorACButton = document.querySelector('.calculator:nth-of-type(2) .AC')
+standardCalculatorACButton.onclick = () => {
     let input = document.querySelector('.calculator:nth-of-type(2) .input')
     let output = document.querySelector('.calculator:nth-of-type(2) .output')
     input.innerHTML = ''

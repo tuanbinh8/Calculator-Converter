@@ -205,6 +205,7 @@
 .converter p {
     font-size: 30px;
     margin: 4px;
+    height: 45px;
 }
 
 .converter .buttons {
@@ -222,7 +223,8 @@
     background-color: rgb(241, 241, 241);
     border-radius: 5px;
     height: 422.917px;
-    width: 264.110px;
+    /* width: 264.110px; */
+    width: 280px;
     margin-left: 5px;
     border: 2px black solid;
     overflow: auto;
