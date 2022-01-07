@@ -40,16 +40,7 @@ selectOtherCalculatorsButtons.map((button) => {
             historyList.style.display='none'
     }
 })
-// let historyButtons = Array.from(document.getElementsByClassName('history-button'))
-// let historyList = document.getElementById('history')
-// historyButtons.map((button) => {
-//     button.onclick = () => {
-//         if (historyList.style.display === 'block')
-//             historyList.style.display = 'none'
-//         else
-//             historyList.style.display = 'block'
-//     }
-// })
+
 let historyButton = document.querySelector('.history-button')
 let historyList = document.getElementById('history')
 let historyContent = document.getElementById('history-content')
