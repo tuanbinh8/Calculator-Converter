@@ -55,4 +55,8 @@ let deleteHistoryButton = document.querySelector('.delete-history-button')
 
 deleteHistoryButton.onclick = ()=>{
     historyContent.innerHTML=''
+    localStorage.historyInputs = ''
+    localStorage.historyOutputs = ''
+    historyInputs = (localStorage.historyInputs == '') ? [] : localStorage.historyInputs
+    historyOutputs = (localStorage.historyOutputs == '') ? [] : localStorage.historyOutputs
 }

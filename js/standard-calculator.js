@@ -1,17 +1,53 @@
 let Ans = localStorage.ans
+let input = document.querySelector('.calculator:nth-of-type(2) .input')
+let output = document.querySelector('.calculator:nth-of-type(2) .output')
+
+try {
+    var historyInputs = localStorage.historyInputs.split(',')
+    var historyOutputs = localStorage.historyOutputs.split(',')
+} catch {
+    var historyInputs = []
+    var historyOutputs = []
+}
+
+historyInputs.map((index) => {
+    let input = index
+    historyOutputs.map((index) => {
+        let output = index
+        if (historyOutputs.indexOf(output) == historyInputs.indexOf(input))
+            historyContent.innerHTML = `<div><p class='input'>${input}</p><p class='output'>${output}</p></div>` + historyContent.innerHTML
+    })
+})
+
+let history = Array.from(document.querySelectorAll('#history #history-content div'))
+history.map((element) => {
+    element.onclick = () => {
+        element.classList.add('active')
+        input.innerText = document.querySelector('#history div.active .input').innerText
+        output.innerText = document.querySelector('#history div.active .output').innerText
+        Ans = Number(output.innerHTML)
+        localStorage.ans = Ans
+        element.classList.remove('active')
+    }
+})
 
 let standardCalculatorButtons = [Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')), Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .basic-symbols .button')), Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .advance-symbols .button'))]
 standardCalculatorButtons.map((listOfButtons) => {
     listOfButtons.map((button) => {
         button.onclick = () => {
-            let input = document.querySelector('.calculator:nth-of-type(2) .input')
-            let output = document.querySelector('.calculator:nth-of-type(2) .output')
-            if (input.innerHTML.length <= 19) {
-                if (output.innerHTML !== '') {
-                    output.innerHTML = ''
-                    input.innerHTML = ''
+            if (button.innerText == 'AC') {
+                input.innerText = ''
+                output.innerText = ''
+            } else if (button.innerText == 'DEL')
+                input.innerText = input.innerText.slice(0, -1)
+            else {
+                if (input.innerHTML.length <= 19) {
+                    if (output.innerHTML !== '') {
+                        output.innerHTML = ''
+                        input.innerHTML = ''
+                    }
+                    input.innerHTML += button.innerHTML
                 }
-                input.innerHTML += button.innerHTML
             }
         }
     })
@@ -19,8 +55,6 @@ standardCalculatorButtons.map((listOfButtons) => {
 
 let equal = document.querySelector('.calculator:nth-of-type(2) .equal')
 equal.onclick = () => {
-    let output = document.querySelector('.calculator:nth-of-type(2) .output')
-    let input = document.querySelector('.calculator:nth-of-type(2) .input')
     let characters = input.innerText.split('')
     characters.map((character) => {
         let place = characters.indexOf(character)
@@ -51,10 +85,10 @@ equal.onclick = () => {
         }
         if (character == '!') {
             characters[place] = Number(characters[place - 1])
-            for (let i = characters[place - 1]-1; i > 0; i--) {
-                characters[place]*=i
+            for (let i = characters[place - 1] - 1; i > 0; i--) {
+                characters[place] *= i
             }
-            characters.splice(place-1,1)
+            characters.splice(place - 1, 1)
         }
     })
     console.log(characters);
@@ -73,7 +107,7 @@ equal.onclick = () => {
                 output.innerHTML = result
                 Ans = result
                 localStorage.ans = Ans
-                historyContent.innerHTML += `<div><p class='input'>${input.innerHTML}</p><p class='output'>${output.innerHTML}</p>`
+                historyContent.innerHTML = `<div><p class='input'>${input.innerHTML}</p><p class='output'>${output.innerHTML}</p></div>` + historyContent.innerHTML
                 let history = Array.from(document.querySelectorAll('#history #history-content div'))
                 history.map((element) => {
                     element.onclick = () => {
@@ -86,26 +120,14 @@ equal.onclick = () => {
                         element.classList.remove('active')
                     }
                 })
+                historyInputs.push(input.innerText)
+                historyOutputs.push(result)
+                localStorage.historyInputs = historyInputs
+                localStorage.historyOutputs = historyOutputs
             }
         }
     } catch (error) {
         output.innerHTML = error.name || 'SyntaxError'
         console.log(error);
     }
-}
-
-let standardCalculatorDELButton = document.querySelector('.calculator:nth-of-type(2) .DEL')
-standardCalculatorDELButton.onclick = () => {
-    let input = document.querySelector('.calculator:nth-of-type(2) .input')
-    let output = document.querySelector('.calculator:nth-of-type(2) .output')
-    if (output.innerHTML === '')
-        input.innerHTML = input.innerHTML.slice(0, -1)
-}
-
-let standardCalculatorACButton = document.querySelector('.calculator:nth-of-type(2) .AC')
-standardCalculatorACButton.onclick = () => {
-    let input = document.querySelector('.calculator:nth-of-type(2) .input')
-    let output = document.querySelector('.calculator:nth-of-type(2) .output')
-    input.innerHTML = ''
-    output.innerHTML = ''
 }
