@@ -26,7 +26,6 @@ let tempUnits = []
 Array.from(document.querySelectorAll('.converter:nth-of-type(8) select:nth-of-type(1) option')).map((element) => {
     tempUnits.push(element.innerText)
 })
-let tempConversionRate = [1, 9 / 5 + 32, + 273.15]
 
 let speedUnits = []
 Array.from(document.querySelectorAll('.converter:nth-of-type(9) select:nth-of-type(1) option')).map((element) => {
@@ -59,7 +58,7 @@ converterButtons.map((button) => {
             input.innerText = input.innerText.slice(0, -1)
         } else {
             if (input.innerText.length <= 16)
-            input.innerText += button.innerText
+                input.innerText += button.innerText
         }
         let measurement = document.querySelector('.converter.active .top-bar h4').innerText
         let fromUnit = document.querySelector('.converter.active select:nth-of-type(1)').selectedOptions[0].innerText
@@ -99,7 +98,19 @@ function convert(measurement, fromUnit, toUnit, inputNumber) {
         return inputNumber * massConversionRate[massUnits.indexOf(fromUnit)] / massConversionRate[massUnits.indexOf(toUnit)]
     }
     if (measurement == 'Temperature') {
-        return inputNumber * tempConversionRate[tempUnits.indexOf(fromUnit)] / tempConversionRate[tempUnits.indexOf(toUnit)]
+        let Celsius
+        if (fromUnit == 'Fahrenheit')
+            Celsius = (inputNumber - 32) * (5 / 9)
+        else if (fromUnit == 'Kelvin')
+            Celsius == inputNumber - 273.15
+        else
+            Celsius = inputNumber
+        if (toUnit == 'Fahrenheit')
+            return Celsius * (9 / 5) + 32
+        else if (toUnit == 'Kelvin')
+            return Celsius + 273.15
+        else
+            return Celsius
     }
     if (measurement == 'Speed') {
         return inputNumber * speedConversionRate[speedUnits.indexOf(fromUnit)] / speedConversionRate[speedUnits.indexOf(toUnit)]

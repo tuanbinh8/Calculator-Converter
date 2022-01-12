@@ -56,15 +56,13 @@ standardCalculatorButtons.map((listOfButtons) => {
 let equal = document.querySelector('.calculator:nth-of-type(2) .equal')
 equal.onclick = () => {
     let characters = input.innerText.split('')
-    characters.map((character) => {
-        let place = characters.indexOf(character)
-        let nextPlace = place + 1
-        while (!isNaN(characters[nextPlace]) || characters[nextPlace] == '.') {
-            let nextCharacter = characters[nextPlace]
-            console.log(characters);
-            if (!isNaN(character) || character == '.') {
+    characters.map((character,place) => {
+        while (!isNaN(character) || character == '.') {
+            let nextCharacter = characters[place+1]
+            if (!isNaN(nextCharacter) || nextCharacter == '.') {
                 characters[place] += nextCharacter
                 characters.splice(place + 1, 1)
+                console.log(characters);
             } else {
                 break
             }
@@ -72,10 +70,10 @@ equal.onclick = () => {
         if (character == 'A' && characters[place + 1] == 'n' && characters[place + 2] == 's') {
             characters[place] += characters[place + 1] + characters[place + 2]
             characters.splice(place + 1, 2)
-            characters.splice(place, 1, Ans)
+            characters[place] = `(${Ans})`
         }
         if (character == 'π')
-            characters[place] = Math.PI
+            characters[place] = `(${Math.PI})`
         if (character == '^')
             characters[place] = '**'
         if (character == '√') {
@@ -90,15 +88,17 @@ equal.onclick = () => {
             }
             characters.splice(place - 1, 1)
         }
+        console.log(characters);
     })
     console.log(characters);
     try {
         if (characters.length !== 0) {
-            let result = eval(characters.join(''))
+            let result = eval(characters.join(' '))
             if (isNaN(result)) {
                 throw 'SyntaxError'
-            }
-            else {
+            } else if (result == Infinity) {
+                throw 'MathError'
+            } else {
                 console.log(result);
                 if (String(result).includes('e+'))
                     output.style.fontSize = '23px'
@@ -112,7 +112,6 @@ equal.onclick = () => {
                 history.map((element) => {
                     element.onclick = () => {
                         element.classList.add('active')
-                        console.log(document.querySelector('#history div.active'));
                         input.innerText = document.querySelector('#history div.active .input').innerText
                         output.innerText = document.querySelector('#history div.active .output').innerText
                         Ans = Number(output.innerHTML)
@@ -127,7 +126,7 @@ equal.onclick = () => {
             }
         }
     } catch (error) {
-        output.innerHTML = error.name || 'SyntaxError'
+        output.innerHTML = error.name || error
         console.log(error);
     }
 }
