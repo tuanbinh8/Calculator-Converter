@@ -37,7 +37,7 @@ selectOtherCalculatorsButtons.map((button) => {
                 calculator.classList.remove('active')
         })
         if (selectOtherCalculatorsButtons.indexOf(button) !== 0)
-            historyList.style.display='none'
+            historyList.style.display = 'none'
     }
 })
 
@@ -53,8 +53,8 @@ historyButton.onclick = () => {
 
 let deleteHistoryButton = document.querySelector('.delete-history-button')
 
-deleteHistoryButton.onclick = ()=>{
-    historyContent.innerHTML=''
+deleteHistoryButton.onclick = () => {
+    historyContent.innerHTML = ''
     localStorage.historyInputs = ''
     localStorage.historyOutputs = ''
     historyInputs = (localStorage.historyInputs == '') ? [] : localStorage.historyInputs

@@ -40,6 +40,8 @@ standardCalculatorButtons.map((listOfButtons) => {
                 output.innerText = ''
             } else if (button.innerText == 'DEL')
                 input.innerText = input.innerText.slice(0, -1)
+            else if (button.innerText == '√')
+                alert('You can\'t use this function now.')
             else {
                 if (input.innerHTML.length <= 19) {
                     if (output.innerHTML !== '') {
@@ -53,12 +55,32 @@ standardCalculatorButtons.map((listOfButtons) => {
     })
 })
 
+window.onkeydown = (event) => {
+    let key = event.key
+    if (!isNaN(key) || key == '.' || key == 'Backspace' || key == 'Delete' || key == '=' || key == 'Enter') {
+        if (input.innerHTML.length <= 19) {
+            if (key == 'Backspace')
+                document.querySelector('.calculator:nth-of-type(2) .DEL').click()
+            else if (key == 'Delete')
+                document.querySelector('.calculator:nth-of-type(2) .AC').click()
+            else if (key = 'Enter' || key == '=') {
+            console.log(key)
+                document.querySelector('.calculator:nth-of-type(2) .equal').click()
+            }
+            else if (key == '.')
+                document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[10].click()
+            else
+                document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[9 - key].click()
+        }
+    }
+}
+
 let equal = document.querySelector('.calculator:nth-of-type(2) .equal')
 equal.onclick = () => {
     let characters = input.innerText.split('')
-    characters.map((character,place) => {
+    characters.map((character, place) => {
         while (!isNaN(character) || character == '.') {
-            let nextCharacter = characters[place+1]
+            let nextCharacter = characters[place + 1]
             if (!isNaN(nextCharacter) || nextCharacter == '.') {
                 characters[place] += nextCharacter
                 characters.splice(place + 1, 1)
@@ -76,11 +98,11 @@ equal.onclick = () => {
             characters[place] = `(${Math.PI})`
         if (character == '^')
             characters[place] = '**'
-        if (character == '√') {
-            characters[place] = 'Math.sqrt('
-            console.log(characters);
-            characters.splice(place + 2, 0, ')')
-        }
+        // if (character == '√') {
+        //     characters[place] = 'Math.sqrt('
+        //     console.log(characters);
+        //     characters.splice(place + 2, 0, ')')
+        // }
         if (character == '!') {
             characters[place] = Number(characters[place - 1])
             for (let i = characters[place - 1] - 1; i > 0; i--) {
@@ -93,7 +115,7 @@ equal.onclick = () => {
     console.log(characters);
     try {
         if (characters.length !== 0) {
-            let result = eval(characters.join(' '))
+            let result = Number(eval(characters.join(' ')).toFixed(10))
             if (isNaN(result)) {
                 throw 'SyntaxError'
             } else if (result == Infinity) {
