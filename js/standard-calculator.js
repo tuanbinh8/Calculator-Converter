@@ -55,26 +55,6 @@ standardCalculatorButtons.map((listOfButtons) => {
     })
 })
 
-window.onkeydown = (event) => {
-    let key = event.key
-    if (!isNaN(key) || key == '.' || key == 'Backspace' || key == 'Delete' || key == '=' || key == 'Enter') {
-        if (input.innerHTML.length <= 19) {
-            if (key == 'Backspace')
-                document.querySelector('.calculator:nth-of-type(2) .DEL').click()
-            else if (key == 'Delete')
-                document.querySelector('.calculator:nth-of-type(2) .AC').click()
-            else if (key = 'Enter' || key == '=') {
-            console.log(key)
-                document.querySelector('.calculator:nth-of-type(2) .equal').click()
-            }
-            else if (key == '.')
-                document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[10].click()
-            else
-                document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[9 - key].click()
-        }
-    }
-}
-
 let equal = document.querySelector('.calculator:nth-of-type(2) .equal')
 equal.onclick = () => {
     let characters = input.innerText.split('')
@@ -150,5 +130,39 @@ equal.onclick = () => {
     } catch (error) {
         output.innerHTML = error.name || error
         console.log(error);
+    }
+}
+
+window.onkeydown = (event) => {
+    let key = event.key
+    let basicSymbols = Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .basic-symbols .button'))
+    let advanceSymbols = Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .advance-symbols .button'))
+    let symbolButtons = []
+    basicSymbols.map((button) => {
+        symbolButtons.push(button)
+    })
+    advanceSymbols.map((button) => {
+        symbolButtons.push(button)
+    })
+    let symbols = []
+    symbolButtons.map((button) => {
+        symbols.push(button.innerText)
+    })
+    if (!isNaN(key) || symbols.indexOf(key) > -1 || key == '.' || key == 'Backspace' || key == 'Delete'|| key == '=' || key == 'Enter') {
+        console.log(key);
+        if (input.innerHTML.length <= 19) {
+            if (key == 'Backspace')
+                document.querySelector('.calculator:nth-of-type(2) .DEL').click()
+            else if (key == 'Delete')
+                document.querySelector('.calculator:nth-of-type(2) .AC').click()
+            else if (key == '.')
+                document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[10].click()
+            else if (!isNaN(key))
+                document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[9 - key].click()
+            else if (symbols.indexOf(key) > -1)
+                symbolButtons[symbols.indexOf(key)].click()
+            else if (key = 'Enter' || key == '=')
+                equal.click()
+        }
     }
 }
