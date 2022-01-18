@@ -63,7 +63,10 @@ converterButtons.map((button) => {
         let measurement = document.querySelector('.converter.active .top-bar h4').innerText
         let fromUnit = document.querySelector('.converter.active select:nth-of-type(1)').selectedOptions[0].innerText
         let toUnit = document.querySelector('.converter.active select:nth-of-type(2)').selectedOptions[0].innerText
-        output.innerText = convert(measurement, fromUnit, toUnit, Number(input.innerText))
+        let result = convert(measurement, fromUnit, toUnit, Number(input.innerText))
+        console.log(result);
+        if (!isNaN(result))
+            output.innerText = result
         if (input.innerText == '')
             output.innerText = ''
     }
@@ -76,25 +79,43 @@ converterSelectsMeasurement.map((element) => {
         let measurement = document.querySelector('.converter.active .top-bar h4').innerText
         let fromUnit = document.querySelector('.converter.active select:nth-of-type(1)').selectedOptions[0].innerText
         let toUnit = document.querySelector('.converter.active select:nth-of-type(2)').selectedOptions[0].innerText
-        output.innerText = convert(measurement, fromUnit, toUnit, Number(input.innerText))
+        let result = convert(measurement, fromUnit, toUnit, Number(input.innerText))
+        if (result !== NaN)
+            output.innerText = result
         if (input.innerText == '')
             output.innerText = ''
     }
 })
 
+window.onkeydown = (event) => {
+    if (document.querySelector('.converter.active')) {
+        let key = event.key
+        if (!isNaN(key) || key == '.' || key == 'Backspace' || key == 'Delete') {
+            if (input.innerHTML.length <= 19) {
+                if (key == 'Backspace')
+                    document.querySelector('.converter.active .DEL').click()
+                else if (key == 'Delete')
+                    document.querySelector('.converter.active .AC').click()
+                else if (key == '.')
+                    document.querySelectorAll('.converter.active .numbers .button')[10].click()
+                else if (!isNaN(key))
+                    document.querySelectorAll('.converter.active .numbers .button')[9 - key].click()
+            }
+        }
+    }
+}
 
 function convert(measurement, fromUnit, toUnit, inputNumber) {
     if (measurement == 'Length') {
         return inputNumber * lengthConversionRate[lengthUnits.indexOf(fromUnit)] / lengthConversionRate[lengthUnits.indexOf(toUnit)]
     }
     if (measurement == 'Area') {
-        console.log(inputNumber);
         return inputNumber * areaConversionRate[areaUnits.indexOf(fromUnit)] / areaConversionRate[areaUnits.indexOf(toUnit)]
     }
     if (measurement == 'Volume') {
         return inputNumber * volumeConversionRate[volumeUnits.indexOf(fromUnit)] / volumeConversionRate[volumeUnits.indexOf(toUnit)]
     }
-    if (measurement == 'Mass') {
+    if (measurement == 'Weight & Mass') {
         return inputNumber * massConversionRate[massUnits.indexOf(fromUnit)] / massConversionRate[massUnits.indexOf(toUnit)]
     }
     if (measurement == 'Temperature') {
