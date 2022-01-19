@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+/* body {
+    overflow: hidden;
+} */
+
 .icon {
     cursor: pointer;
     margin: 5px;
@@ -11,6 +15,7 @@
 }
 
 #container {
+    /* transform: scale(1.1); */
     cursor: default;
     width: 100vw;
     height: 100vh;
@@ -224,7 +229,7 @@
     border-radius: 5px;
     height: 422.917px;
     /* width: 264.110px; */
-    width: 280px;
+    width: 304px;
     margin-left: 5px;
     border: 2px black solid;
     overflow: auto;
@@ -275,3 +280,14 @@
     background-color: black;
     text-decoration: none;
 }
+
+@media screen and (max-width: 800px) {
+    #other-calculators {
+        margin: 0;
+        position: absolute;
+    }
+    #history {
+        margin: 0;
+        position: absolute;
+    }
+  }

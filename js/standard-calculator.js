@@ -38,8 +38,10 @@ standardCalculatorButtons.map((listOfButtons) => {
             if (button.innerText == 'AC') {
                 input.innerText = ''
                 output.innerText = ''
-            } else if (button.innerText == 'DEL')
-                input.innerText = input.innerText.slice(0, -1)
+            } else if (button.innerText == 'DEL') {
+                if (output.innerText.length == 0)
+                    input.innerText = input.innerText.slice(0, -1)
+            }
             else if (button.innerText == '√')
                 alert('You can\'t use this function now.')
             else {
@@ -130,40 +132,5 @@ equal.onclick = () => {
     } catch (error) {
         output.innerHTML = error.name || error
         console.log(error);
-    }
-}
-
-window.onkeydown = (event) => {
-    if (document.querySelector('.calculator:nth-of-type(2).active')) {
-        let key = event.key
-        let basicSymbols = Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .basic-symbols .button'))
-        let advanceSymbols = Array.from(document.querySelectorAll('.calculator:nth-of-type(2) .advance-symbols .button'))
-        let symbolButtons = []
-        basicSymbols.map((button) => {
-            symbolButtons.push(button)
-        })
-        advanceSymbols.map((button) => {
-            symbolButtons.push(button)
-        })
-        let symbols = []
-        symbolButtons.map((button) => {
-            symbols.push(button.innerText)
-        })
-        if (!isNaN(key) || symbols.indexOf(key) > -1 || key == '.' || key == 'Backspace' || key == 'Delete' || key == '=' || key == 'Enter') {
-            if (input.innerHTML.length <= 19) {
-                if (key == 'Backspace')
-                    document.querySelector('.calculator:nth-of-type(2) .DEL').click()
-                else if (key == 'Delete')
-                    document.querySelector('.calculator:nth-of-type(2) .AC').click()
-                else if (key == '.')
-                    document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[10].click()
-                else if (!isNaN(key))
-                    document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[9 - key].click()
-                else if (symbols.indexOf(key) > -1)
-                    symbolButtons[symbols.indexOf(key)].click()
-                else if (key = 'Enter' || key == '=')
-                    equal.click()
-            }
-        }
     }
 }

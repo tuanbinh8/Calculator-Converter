@@ -87,24 +87,6 @@ converterSelectsMeasurement.map((element) => {
     }
 })
 
-window.onkeydown = (event) => {
-    if (document.querySelector('.converter.active')) {
-        let key = event.key
-        if (!isNaN(key) || key == '.' || key == 'Backspace' || key == 'Delete') {
-            if (input.innerHTML.length <= 19) {
-                if (key == 'Backspace')
-                    document.querySelector('.converter.active .DEL').click()
-                else if (key == 'Delete')
-                    document.querySelector('.converter.active .AC').click()
-                else if (key == '.')
-                    document.querySelectorAll('.converter.active .numbers .button')[10].click()
-                else if (!isNaN(key))
-                    document.querySelectorAll('.converter.active .numbers .button')[9 - key].click()
-            }
-        }
-    }
-}
-
 function convert(measurement, fromUnit, toUnit, inputNumber) {
     if (measurement == 'Length') {
         return inputNumber * lengthConversionRate[lengthUnits.indexOf(fromUnit)] / lengthConversionRate[lengthUnits.indexOf(toUnit)]
