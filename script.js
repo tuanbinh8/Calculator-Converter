@@ -64,7 +64,6 @@ deleteHistoryButton.onclick = () => {
 window.onclick = (event) => {
     if (window.innerWidth <= 800) {
         let element = event.target
-        console.log(element);
         if (!(element == historyList || historyList.contains(element) || element == historyButton || historyButton.contains(element))) {
             historyList.style.display = 'none'
         }
