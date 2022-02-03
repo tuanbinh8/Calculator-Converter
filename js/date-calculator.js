@@ -28,15 +28,18 @@ endingDate.onchange = () => {
     checkDatesDifference(startingDate.value, endingDate.value)
 }
 function checkDatesDifference(startingDate, endingDate) {
-    let largerDate = new Date(Math.max(new Date(startingDate), new Date(endingDate)))
-    let smallerDate = new Date(Math.min(new Date(startingDate), new Date(endingDate)))
-    let dateDifferenceAsMillisecond = Math.abs(new Date(startingDate) - new Date(endingDate))
-    let dateDifferenceAsDay = dateDifferenceAsMillisecond / (1000 * 60 * 60 * 24)
-    let dateDifference = [Math.floor(dateDifferenceAsDay / 365) + ' year(s)', Math.floor(dateDifferenceAsDay % 365 / 30) + ' month(s)', Math.floor(dateDifferenceAsDay % 365 % 30 / 7) + ' week(s)', dateDifferenceAsDay % 365 % 30 % 7 + ' day(s)']
-    if (dateDifference.join(', ') == 'NaN year(s), NaN month(s), NaN week(s), NaN day(s)')
-        dateDifference = []
-    document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result').innerText = dateDifference.join(', ')
-    document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result-as-day').innerText = dateDifferenceAsDay + ' day(s)'
+    // let largerDate = new Date(Math.max(new Date(startingDate), new Date(endingDate)))
+    // let smallerDate = new Date(Math.min(new Date(startingDate), new Date(endingDate)))
+    // let dateDifferenceAsMillisecond = Math.abs(new Date(startingDate) - new Date(endingDate))
+    // let dateDifferenceAsDay = dateDifferenceAsMillisecond / (1000 * 60 * 60 * 24)
+    // let dateDifference = [Math.floor(dateDifferenceAsDay / 365) + ' year(s)', Math.floor(dateDifferenceAsDay % 365 / 30) + ' month(s)', Math.floor(dateDifferenceAsDay % 365 % 30 / 7) + ' week(s)', dateDifferenceAsDay % 365 % 30 % 7 + ' day(s)']
+    // if (dateDifference.join(', ') == 'NaN year(s), NaN month(s), NaN week(s), NaN day(s)')
+    //     dateDifference = []
+    // document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result').innerText = dateDifference.join(', ')
+    // document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result-as-day').innerText = dateDifferenceAsDay + ' day(s)'
+    let result = moment.duration(moment(new Date(startingDate)).diff(moment(new Date(endingDate))))
+    document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result').innerText = `${Math.abs(result._data.years)} year(s) ${Math.abs(result._data.months)} month(s) ${Math.abs(Math.floor(result._data.days / 7))} week(s) ${Math.abs(result._data.days % 7)} day(s)`
+    document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result-as-day').innerText = Math.abs(result.as('days')) + ' day(s)'
 }
 
 let firstAddendDate = document.getElementById('first-addend-date')
