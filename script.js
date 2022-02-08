@@ -68,9 +68,9 @@ window.onclick = (event) => {
             historyList.style.display = 'none'
         }
         let currentOtherCalculatorsBar = document.querySelector('.calculator.active .other-calculators-bar')
-            if (!(element == otherCalculatorsList || otherCalculatorsList.contains(element) || element == currentOtherCalculatorsBar || currentOtherCalculatorsBar.contains(element))) {
-                otherCalculatorsList.style.display = 'none'
-            }
+        if (!(element == otherCalculatorsList || otherCalculatorsList.contains(element) || element == currentOtherCalculatorsBar || currentOtherCalculatorsBar.contains(element))) {
+            otherCalculatorsList.style.display = 'none'
+        }
     }
 }
 
@@ -106,20 +106,18 @@ window.onkeydown = (event) => {
             symbols.push(button.innerText)
         })
         if (!isNaN(key) || symbols.indexOf(key) > -1 || key == '.' || key == 'Backspace' || key == 'Delete' || key == '=' || key == 'Enter') {
-            if (input.innerHTML.length <= 19) {
-                if (key == 'Backspace')
-                    document.querySelector('.calculator:nth-of-type(2) .DEL').click()
-                else if (key == 'Delete')
-                    document.querySelector('.calculator:nth-of-type(2) .AC').click()
-                else if (key == '.')
-                    document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[10].click()
-                else if (!isNaN(key))
-                    document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[9 - key].click()
-                else if (symbols.indexOf(key) > -1)
-                    symbolButtons[symbols.indexOf(key)].click()
-                else if (key = 'Enter' || key == '=')
-                    equal.click()
-            }
+            if (key == 'Backspace')
+                document.querySelector('.calculator:nth-of-type(2) .DEL').click()
+            else if (key == 'Delete')
+                document.querySelector('.calculator:nth-of-type(2) .AC').click()
+            else if (key == '.')
+                document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[10].click()
+            else if (!isNaN(key))
+                document.querySelectorAll('.calculator:nth-of-type(2) .numbers .button')[9 - key].click()
+            else if (symbols.indexOf(key) > -1)
+                symbolButtons[symbols.indexOf(key)].click()
+            else if (key = 'Enter' || key == '=')
+                equal.click()
         }
     }
 }
