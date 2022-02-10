@@ -6,6 +6,9 @@ Not just that, you can convert from cm to km; from Gigabytes to Megabytes; from 
 
 Demo link: https://tuanbinh8.github.io/Calculator-Converter/
 
+## How to use
+Just like how to use Microsoft Calculator App lmao...
+
 ## Credits
 + Microsoft Calculator App
 + https://zxcodes.github.io/Calculator/
