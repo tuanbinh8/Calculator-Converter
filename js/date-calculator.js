@@ -38,7 +38,12 @@ function checkDatesDifference(startingDate, endingDate) {
     // document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result').innerText = dateDifference.join(', ')
     // document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result-as-day').innerText = dateDifferenceAsDay + ' day(s)'
     let result = moment.duration(moment(new Date(startingDate)).diff(moment(new Date(endingDate))))
-    document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result').innerText = `${Math.abs(result._data.years)} year(s) ${Math.abs(result._data.months)} month(s) ${Math.abs(Math.floor(result._data.days / 7))} week(s) ${Math.abs(result._data.days % 7)} day(s)`
+    let weekDifference
+    if (new Date(startingDate) > new Date(endingDate))
+        weekDifference = Math.abs(Math.floor(result._data.days / 7))
+    else
+        weekDifference = Math.abs(Math.ceil(result._data.days / 7))
+    document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result').innerText = `${Math.abs(result._data.years)} year(s) ${Math.abs(result._data.months)} month(s) ${weekDifference} week(s) ${Math.abs(result._data.days % 7)} day(s)`
     document.querySelector('.calculator:nth-of-type(3) .date-calculator:nth-of-type(2) .result-as-day').innerText = Math.abs(result.as('days')) + ' day(s)'
 }
 
