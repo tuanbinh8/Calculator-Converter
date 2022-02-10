@@ -4,10 +4,13 @@ let calculators = Array.from(document.getElementsByClassName('calculator'))
 
 document.getElementById('switching-mode-button').onclick = () => {
     Array.from(document.querySelectorAll('*')).map((element) => {
-        if (!element.classList.contains('darkmode'))
+        if (!element.classList.contains('darkmode')) {
             element.classList.add('darkmode')
-        else
+            document.getElementById('switching-mode-button').innerText='Light mode 🌞'
+        } else {
             element.classList.remove('darkmode')
+            document.getElementById('switching-mode-button').innerText='Dark mode 🌙'
+        }
     })
 }
 
