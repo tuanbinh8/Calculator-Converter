@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    transition: 0.8s background-color;
 }
 
 /* body {
@@ -39,6 +40,7 @@
     padding: 5px 10px;
     font-size: 15px;
     cursor: pointer;
+    transition: 0s background-color;
 }
 
 #other-calculators div:hover {
