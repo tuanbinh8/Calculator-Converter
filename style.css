@@ -5,10 +5,6 @@
     transition: 0.8s background-color;
 }
 
-/* body {
-    overflow: hidden;
-} */
-
 .icon {
     cursor: pointer;
     margin: 5px;
@@ -16,7 +12,6 @@
 }
 
 #container {
-    /* transform: scale(1.1); */
     cursor: default;
     width: 100vw;
     height: 100vh;
@@ -283,7 +278,7 @@
     text-decoration: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 830px) {
     #other-calculators {
         margin: 0;
         position: absolute;
