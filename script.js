@@ -1,3 +1,4 @@
+// localStorage.clear()
 Array.from(document.querySelectorAll('*')).map((element) => {
     if (localStorage.darkmode == 'darkmode') {
         element.classList.add('darkmode')
@@ -13,17 +14,19 @@ let selectOtherCalculatorsButtons = Array.from(document.querySelectorAll('#other
 let calculators = Array.from(document.getElementsByClassName('calculator'))
 
 document.getElementById('switching-mode-button').onclick = () => {
-    Array.from(document.querySelectorAll('*')).map((element) => {
-        if (!element.classList.contains('darkmode')) {
+    if (localStorage.darkmode == 'lightmode') {
+        Array.from(document.querySelectorAll('*')).map((element) => {
             localStorage.darkmode = 'darkmode'
             element.classList.add('darkmode')
             document.getElementById('switching-mode-button').innerText = 'Light mode 🌞'
-        } else {
+        })
+    } else {
+        Array.from(document.querySelectorAll('*')).map((element) => {
             localStorage.darkmode = 'lightmode'
             element.classList.remove('darkmode')
             document.getElementById('switching-mode-button').innerText = 'Dark mode 🌙'
-        }
-    })
+        })
+    }
     console.log(document.getElementById('switching-mode-button').innerText);
 }
 
