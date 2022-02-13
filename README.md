@@ -13,5 +13,5 @@ Just like how to use Microsoft Calculator App lmao...
 
 ## 🦋 Bugs
 + You can't use the square root function in standard calculator
-+ There's a bug in the date calculator: In the "Get the difference between dates" part, the default number of days in a month is 31, so it won't return the accurate result.
++ There's a bug in the date calculator: In the "Get the difference between dates" part, the default number of days in a month is 31, so it won't return the accurate result.  
 **Please help me fix the bug!!!**
