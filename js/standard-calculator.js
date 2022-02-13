@@ -111,22 +111,24 @@ equal.onclick = () => {
                 output.innerHTML = result
                 Ans = result
                 localStorage.ans = Ans
-                historyContent.innerHTML = `<div><p class='input'>${input.innerHTML}</p><p class='output'>${output.innerHTML}</p></div>` + historyContent.innerHTML
-                let history = Array.from(document.querySelectorAll('#history #history-content div'))
-                history.map((element) => {
-                    element.onclick = () => {
-                        element.classList.add('active')
-                        input.innerText = document.querySelector('#history div.active .input').innerText
-                        output.innerText = document.querySelector('#history div.active .output').innerText
-                        Ans = Number(output.innerHTML)
-                        localStorage.ans = Ans
-                        element.classList.remove('active')
-                    }
-                })
-                historyInputs.push(input.innerText)
-                historyOutputs.push(result)
-                localStorage.historyInputs = historyInputs
-                localStorage.historyOutputs = historyOutputs
+                if (historyInputs.length < 30) {
+                    historyContent.innerHTML = `<div><p class='input'>${input.innerHTML}</p><p class='output'>${output.innerHTML}</p></div>` + historyContent.innerHTML
+                    let history = Array.from(document.querySelectorAll('#history #history-content div'))
+                    history.map((element) => {
+                        element.onclick = () => {
+                            element.classList.add('active')
+                            input.innerText = document.querySelector('#history div.active .input').innerText
+                            output.innerText = document.querySelector('#history div.active .output').innerText
+                            Ans = Number(output.innerHTML)
+                            localStorage.ans = Ans
+                            element.classList.remove('active')
+                        }
+                    })
+                    historyInputs.push(input.innerText)
+                    historyOutputs.push(result)
+                    localStorage.historyInputs = historyInputs
+                    localStorage.historyOutputs = historyOutputs
+                }
             }
         }
     } catch (error) {

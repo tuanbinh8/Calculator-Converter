@@ -27,7 +27,6 @@ document.getElementById('switching-mode-button').onclick = () => {
             document.getElementById('switching-mode-button').innerText = 'Dark mode 🌙'
         })
     }
-    console.log(document.getElementById('switching-mode-button').innerText);
 }
 
 let otherCalculatorsBars = Array.from(document.getElementsByClassName('other-calculators-bar'))
