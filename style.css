@@ -76,6 +76,15 @@
     margin: 3px 0;
 }
 
+.calculator:nth-of-type(2) .result {
+    cursor: default;
+    padding: 5px;
+    margin: 10px;
+    height: 90px;
+    font-size: 25px;
+    text-align: right;
+}
+
 .calculator .button {
     color: white;
     margin: 0px 5px 5px 5px;
@@ -150,15 +159,6 @@
 
 .calculator:nth-of-type(2) .buttons .advance-symbols .button:active {
     background-color: rgb(0, 100, 0);
-}
-
-.calculator:nth-of-type(2) .result {
-    cursor: default;
-    padding: 5px;
-    margin: 10px;
-    height: 90px;
-    font-size: 25px;
-    text-align: right;
 }
 
 .calculator:nth-of-type(3) .date-calculator {
