@@ -1,4 +1,5 @@
 // localStorage.clear()
+
 Array.from(document.querySelectorAll('*')).map((element) => {
     if (localStorage.darkmode == 'darkmode') {
         element.classList.add('darkmode')
